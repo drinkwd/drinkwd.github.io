@@ -301,7 +301,7 @@ sup > a::before,
 }
 html,
 body {
-  font-size: 18px;
+  font-size: 16x;
   font-family: var(--font-family-sans-serif);
 }
 html,
