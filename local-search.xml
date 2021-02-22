@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>🕶给博客增加评论功能🕶</title>
+    <link href="/2021/02/22/%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/"/>
+    <url>/2021/02/22/%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</url>
+    
+    <content type="html"><![CDATA[<h1 id="弱者坐待时机，强者制造时机✨。"><a href="#弱者坐待时机，强者制造时机✨。" class="headerlink" title="弱者坐待时机，强者制造时机✨。"></a>弱者坐待时机，强者制造时机✨。</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h2><p>  昨天博客搭建完了之后，突然想到要是有老铁跟我互动应该怎么办啊😶(<a href="https://drinkwd.github.io/2021/02/20/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/">不知道怎么搭建博客的看我上一篇文章</a>)<br>我就去fluid的文档里面搜了搜确实有关于博客评论的知识点👍点赞。</p><h2 id="2-评论系统选型"><a href="#2-评论系统选型" class="headerlink" title="2 评论系统选型"></a>2 评论系统选型</h2><p>文档里面明确说了如果想要应该使用博客评论，应该注意的问题，我在这里引用一下<a href="https://hexo.fluid-dev.com/docs/guide/#%E8%AF%84%E8%AE%BA">地址</a>。</p><p><img src="https://static01.imgkr.com/temp/22d9b09df5ed44a59155150381d8223a.png"></p><p>既然作者都说国内用户推荐使用<code>Valine</code>或者<code>Utterances</code>那我就在这两个里面选了一个。下面是这两个评论的截图。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/99177ad3-5d9a-4f67-8e17-de5c88c2be1d.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=485FdOo%252Bp4ZM2XdNbhWNDgE2Dfs%253D&Expires=1614001800" alt="Utterances👆"></p><p><img src="https://static01.imgkr.com/temp/b9dc2a2b8b5244cea23b2a4f50942201.png" alt="Valine👆"><br>通过颜值和实用度来看我选择了<code>Utterances</code>因为我觉得他的样式好看一点。并且还不用像<code>Valine</code>填写用户信息和网址直接只用<code>GitHub</code>账户登陆就可以了✨。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>选型选好了之后我们就根据作者提供的文档,以及我们的配置文件也就是<a href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">_config.fluid.yml</a>修改一下配置文件。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/b06cd120-77f7-4a09-a76a-53c5296a70ab.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=UeUMraPlncjzCOPFx3VtNVTARgI%253D&Expires=1614002184" alt="配置文件👆"><br>配置文件配置完之后我们执行一下<code>hexo s</code>命令看看你的文章下面是不是就多出来一个类似与<code>github Issue</code>的评论。我天真的以为这就结束了。但是当我真正评论的时候，他就报错了。是长这个样子的。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/892ca710-da77-48c7-a0b2-437706ed8b0b.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=KVlYZBiAya9Dc9bAHF9YOUVnSC0%253D&Expires=1614002393"><br>翻译过来的大概意思就是你配置的仓库并没有绑定<code>Utterances</code> 如果你想使用这个Utterances就去绑定一下。接下来点击<code>install app</code>。会跳转到绑定安装页面。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/f81c1f2b-6601-469d-9ea2-cd6fd91d36cf.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=%252BOxvBViOgDLUzE8COA7yfqyyWP8%253D&Expires=1614002564"><br>点击<code>install</code> 进行下一步操作，他会询问你名下所有的库都绑定<code>Utterances</code>还是只给某个固定的库绑定，我们选择自己的博客，然后点击<code>install</code>,之后会让你输入github密码，我们把正确的密码输入正确就可以啦。<br><img src="https://imgkr2.cn-bj.ufileos.com/c51321c7-a945-4bcc-a880-1948f05bcfa2.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=233RhpIZyhRijNe0aXv3eM6RP5A%253D&Expires=1614002657"><br>这时我们再次回到自己的博客再次评论发表评论就会发现已经大功告成啦🎁。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/ce8c3a64-a243-41e6-9320-02dabda8d6d6.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=2%252BLxVEhLx713r5T5vkOrsp3HLbU%253D&Expires=1614002833"></p><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>实际上用户在真正评论了之后会在绑定的仓库下面提一个<code>Issue</code>。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/b924f503-56c3-4524-9153-1f7e75d677af.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=5PIj%252BdZm0MDx0fjqyV4nbGUJ4k0%253D&Expires=1614003036"><br>关闭还是回复就交给你自由发挥啦🎁。</p><p>细心的同学可能会发现，我只是评论了为什么发起Issue还默认把路径和文章名称作为评论的标题啊并且还是乱码？🎭这时有两种解决方案。</p><ul><li>文章的标题采用中文(有点鸡贼哈)</li><li>修改配置文件<br>怎么修改配置文件呢？我们去<a href="https://utteranc.es/"><code>utterances</code></a>的官网,这里是这么说的<code>Blog Post ↔️ Issue Mapping</code> 翻译过来就是文章和<code>Issue</code>的映射。我翻译了一下大概是这样。</li></ul><p><img src="https://imgkr2.cn-bj.ufileos.com/5a5d1d29-8fc0-4483-8580-f5546129c1f3.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=j%252B4LNXPZmN%252FETN%252Bg9dImesMWrJc%253D&Expires=1614003607"><br>我们选择第三个 文章标题和页面标题，不包含路径这是<code>utteranc</code>官网下方的代码会跟着变化。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/292a802d-2422-4cce-b7db-d4c5a7c26c79.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=0Aet0wJkPsEgNKybyDyYrQKg0Rs%253D&Expires=1614003725"></p><p>紧接着我们把<code>_config.fluid.yml</code>文件中的<code>issue-term</code>后面修改为<code>title</code> 再次评论一下,就会发现乱码没有了🎉。</p><p><img src="https://imgkr2.cn-bj.ufileos.com/73f2ca5e-b3f5-489e-83d3-6f02ae61ef33.png?UCloudPublicKey=TOKEN_8d8b72be-579a-4e83-bfd0-5f6ce1546f13&Signature=1khG8qiPp5tNsp9fvlEcQMQygFI%253D&Expires=1614003907"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>当初以为评论特别简单修改一个配置就可以，后来还是发现自己大意了没有闪😕。网上关于这种的也不是很多，我全是凭着谷歌翻译一点点摸索出来的。还好<code>fluid</code>作者和<code>utterances</code>作者的文档写的比较详细。小生这厢有礼了，下期见🏃‍♂️。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>GitHub Pages</tag>
+      
+      <tag>Fluid</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>😍手把手教你怎么搭建一个博客😍</title>
     <link href="/2021/02/20/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
     <url>/2021/02/20/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
@@ -23,6 +50,8 @@
       <tag>hexo</tag>
       
       <tag>GitHub Pages</tag>
+      
+      <tag>Fluid</tag>
       
     </tags>
     
