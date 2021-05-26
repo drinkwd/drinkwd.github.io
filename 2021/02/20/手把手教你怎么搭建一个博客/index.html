@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="我曾踏足山巅，也曾进入低谷，二者都让我受益良多">
   <meta name="author" content="drinkwd">
   <meta name="keywords" content="drinkwd">
+  
   <title>😍手把手教你怎么搭建一个博客😍 - drinkwd的个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -263,20 +264,20 @@
 <li>结合hexo博客框架实现一个<code>快速、简洁且高效</code>的博客</li>
 </ul>
 <h3 id="注册一个github账户"><a href="#注册一个github账户" class="headerlink" title="注册一个github账户"></a>注册一个github账户</h3><p>进入<a target="_blank" rel="noopener" href="https://github.com/">github</a>按照步骤填写基本信息，github会给你的邮箱发一个验证码进行验证，验证成功之后这时你就拥有了属于你自己的github账户😕(我github账户这里面都是之前写的垃圾，大佬嘴下留情)</p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhPVbj.png" srcset="/img/loading.gif" alt="注册☝"></p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhCfu4.png" srcset="/img/loading.gif" alt="注册成功☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhPVbj.png" srcset="/img/loading.gif" lazyload alt="注册☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhCfu4.png" srcset="/img/loading.gif" lazyload alt="注册成功☝"></p>
 <h3 id="搭建简易版的GitHub-Pages博客"><a href="#搭建简易版的GitHub-Pages博客" class="headerlink" title="搭建简易版的GitHub Pages博客"></a>搭建简易版的GitHub Pages博客</h3><p>为什么说是一个特殊的github仓库呢😇，因为她对应的仓库名的格式是 <code>username.github.io</code>(username代表的是你的github注册时填写的名字)</p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhES91.png" srcset="/img/loading.gif" alt="新建仓库☝"><br>仓库创建成功之后点击<code>Settings</code>进入到设置界面一直往下拉会看到<code>GitHub Pages 标签块</code>，下面有你github Pages的访问地址，点击之后你就会发现你<code>裸奔的博客</code>诞生了🤗.毕竟我们的博客是给人看的 我们还是穿个衣服比较好，点击<code>choose a theme</code> 会有一堆主题任你选择，随便选一个你的博客就会穿上新衣服啦🤣</p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhmai4.png" srcset="/img/loading.gif" alt="进入设置☝"></p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhmcdO.png" srcset="/img/loading.gif" alt="找到GitHub Pages标签☝"></p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhm4SA.png" srcset="/img/loading.gif" alt="裸奔博客☝"></p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhuU29.png" srcset="/img/loading.gif" alt="选择主题☝"></p>
-<p><img src="https://s3.ax1x.com/2021/02/19/yhusUO.png" srcset="/img/loading.gif" alt="穿衣博客☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhES91.png" srcset="/img/loading.gif" lazyload alt="新建仓库☝"><br>仓库创建成功之后点击<code>Settings</code>进入到设置界面一直往下拉会看到<code>GitHub Pages 标签块</code>，下面有你github Pages的访问地址，点击之后你就会发现你<code>裸奔的博客</code>诞生了🤗.毕竟我们的博客是给人看的 我们还是穿个衣服比较好，点击<code>choose a theme</code> 会有一堆主题任你选择，随便选一个你的博客就会穿上新衣服啦🤣</p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhmai4.png" srcset="/img/loading.gif" lazyload alt="进入设置☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhmcdO.png" srcset="/img/loading.gif" lazyload alt="找到GitHub Pages标签☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhm4SA.png" srcset="/img/loading.gif" lazyload alt="裸奔博客☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhuU29.png" srcset="/img/loading.gif" lazyload alt="选择主题☝"></p>
+<p><img src="https://s3.ax1x.com/2021/02/19/yhusUO.png" srcset="/img/loading.gif" lazyload alt="穿衣博客☝"></p>
 <blockquote>
 <p>起仓库名称的时候需要注意下面两个问题</p>
 <ul>
-<li>如果你起的仓库名称是<code>xxx.github.io</code>(xxx不是你的github用户名)那么你的访问地址就会变成username.github.io/xxx.github.io🎨。也不是不可以就是<code>不美观</code>👀<br><img src="https://static01.imgkr.com/temp/3bf4e535849347b48d34458e86f55cdd.png" srcset="/img/loading.gif"></li>
-<li>如果你起的仓库名称是随便起的例如就叫一个test,当你点击<code>Settings</code>的时候就会询问你是否要把当前项目升级成<code>GitHub Pages</code><br><img src="https://static01.imgkr.com/temp/a5f34c710a8042d88d009b8583a98a06.png" srcset="/img/loading.gif"></li>
+<li>如果你起的仓库名称是<code>xxx.github.io</code>(xxx不是你的github用户名)那么你的访问地址就会变成username.github.io/xxx.github.io🎨。也不是不可以就是<code>不美观</code>👀<br><img src="https://static01.imgkr.com/temp/3bf4e535849347b48d34458e86f55cdd.png" srcset="/img/loading.gif" lazyload></li>
+<li>如果你起的仓库名称是随便起的例如就叫一个test,当你点击<code>Settings</code>的时候就会询问你是否要把当前项目升级成<code>GitHub Pages</code><br><img src="https://static01.imgkr.com/temp/a5f34c710a8042d88d009b8583a98a06.png" srcset="/img/loading.gif" lazyload></li>
 <li>所以我们还是老老实实按照人家的规定来起名字。与其他业务级的项目区分开，博客就是一个独立的静态网站，按照规则办事。🎈</li>
 </ul>
 </blockquote>
@@ -284,11 +285,11 @@
 <p>注：前提条件你的电脑已经配置了git的相关配置(否则会无法使用git命令哦)具体怎么配置就🤞廖雪峰大佬的<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">git教程</a>就可以很完整</p>
 </blockquote>
 <ul>
-<li><p>现在穿上衣服的博客内容我们要修改应该怎么办呢🤫(<code>就是把大象放进冰箱里面的道理是一样的</code>)，首先应该先把冰箱门打开(找到项目地址把<code>项目clone到本地</code>)🍕。<br><img src="https://s3.ax1x.com/2021/02/19/yh13h8.png" srcset="/img/loading.gif" alt="找到项目地址☝"></p>
+<li><p>现在穿上衣服的博客内容我们要修改应该怎么办呢🤫(<code>就是把大象放进冰箱里面的道理是一样的</code>)，首先应该先把冰箱门打开(找到项目地址把<code>项目clone到本地</code>)🍕。<br><img src="https://s3.ax1x.com/2021/02/19/yh13h8.png" srcset="/img/loading.gif" lazyload alt="找到项目地址☝"></p>
 </li>
-<li><p>第二步把大象放到冰箱里面(<code>修改项目中的部分代码</code>,例如这个我们就将welcome。。修改为欢迎来到我的博客)🍔。<br><img src="https://s3.ax1x.com/2021/02/19/yh3Kv4.png" srcset="/img/loading.gif" alt="克隆项目☝"></p>
+<li><p>第二步把大象放到冰箱里面(<code>修改项目中的部分代码</code>,例如这个我们就将welcome。。修改为欢迎来到我的博客)🍔。<br><img src="https://s3.ax1x.com/2021/02/19/yh3Kv4.png" srcset="/img/loading.gif" lazyload alt="克隆项目☝"></p>
 </li>
-<li><p>第三步把冰箱门关上(将修改之后的文件再次<code>提交到github</code>)🍟,这时再次访问你的地址(username.github.io)你就会发现你修改的内容已经被更新了(项目更新之后github pages 可能会有延迟。喝杯茶水的时间就更新好了。)😁<br><img src="https://s3.ax1x.com/2021/02/19/yh3GUx.png" srcset="/img/loading.gif" alt="提交项目☝"></p>
+<li><p>第三步把冰箱门关上(将修改之后的文件再次<code>提交到github</code>)🍟,这时再次访问你的地址(username.github.io)你就会发现你修改的内容已经被更新了(项目更新之后github pages 可能会有延迟。喝杯茶水的时间就更新好了。)😁<br><img src="https://s3.ax1x.com/2021/02/19/yh3GUx.png" srcset="/img/loading.gif" lazyload alt="提交项目☝"></p>
 </li>
 </ul>
 <p>至此，你的简易博客就完成啦🧐，虽然说目前只是一个<code>简易版的小博客</code>，不过你想有一个<code>漂亮的简历</code>到此就可以为止啦，自己弄弄排版。这样的<code>在线简历</code>不是比pdf那种简历强多啦，开动你的脑瓜吧😎。</p>
@@ -298,10 +299,10 @@
 </ul>
 <h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<a target="_blank" rel="noopener" href="https://hexo.io/"><code>Hexo</code></a></h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">npm install hexo-cli -g <span class="hljs-comment">//全局安装hexo，如果安装特别慢可以使用cnpm局部安装：npm install hexo</span><br>hexo init blog   <span class="hljs-comment">//初始化博客</span><br>cd blog <span class="hljs-comment">// 进入到指定目录</span><br>npm install <span class="hljs-comment">// 安装依赖</span><br>hexo s <span class="hljs-comment">// 运行项目</span><br></code></pre></div></td></tr></table></figure>
 <p>浏览器访问<code>localhost:4000</code>就可以看到初始化的博客啦(<code>hexo</code>是适配手机端的哦✨)</p>
-<p><img src="https://s3.ax1x.com/2021/02/22/y7k7fe.png" srcset="/img/loading.gif"></p>
+<p><img src="https://s3.ax1x.com/2021/02/22/y7k7fe.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="Hexo重要配置"><a href="#Hexo重要配置" class="headerlink" title="Hexo重要配置"></a><code>Hexo</code><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">重要配置</a></h4><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">drinkwd的个人博客</span> <span class="hljs-comment"># 网站标题</span><br><span class="hljs-attr">subtitle:</span> <span class="hljs-string">&#x27;欢迎来到drinkwd的个人博客&#x27;</span> <span class="hljs-comment"># 网站副标题</span><br><span class="hljs-attr">description:</span> <span class="hljs-string">&#x27;我曾踏足山巅，也曾进入低谷，二者都让我受益良多&#x27;</span> <span class="hljs-comment"># 网站描述</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">drinkwd</span> <span class="hljs-comment"># 作者</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">https://drinkwd.github.io/</span> <span class="hljs-comment"># 你网站的网址 不可以省略前面的http/https</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">landscape</span> <span class="hljs-comment"># 可以修改主题（不是直接修改名称，需要按照文档步骤进行操作）</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span> <span class="hljs-comment"># 部署类型可以是多个如果是github写git就可以</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">https://github.com/drinkwd/drinkwd.github.io.git</span>  <span class="hljs-comment"># 仓库地址</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span> <span class="hljs-comment"># 远程分支</span><br></code></pre></div></td></tr></table></figure>
 <h4 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h4><p>这个主题修改活活我是弄了2个多小时🧭选择恐惧症，真的是不知道哪款主题比较适合自己，即想酷炫又想简约May the force be with you（别太放肆没什么用👑）最后选了<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a>中文文档，各种配置文件说的特别细，感谢作者大佬🧎‍♂️按照网站的教程一步一步的操作就可以打造一个酷炫又满足使用的博客。客官我上图了🙆‍♂️。</p>
-<p><img src="https://s3.ax1x.com/2021/02/22/y7kbSH.png" srcset="/img/loading.gif"></p>
+<p><img src="https://s3.ax1x.com/2021/02/22/y7kbSH.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a><code>Hexo</code><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands.html">常用命令</a></h4><p><em>本地查看效果</em></p>
 <figure class="highlight elixir"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>hexo s<br></code></pre></div></td></tr></table></figure>
 <p><em>新建文章</em></p>
@@ -311,7 +312,7 @@
 <p><em>推送至github</em></p>
 <figure class="highlight elixir"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>hexo deploy<br></code></pre></div></td></tr></table></figure>
 <blockquote>
-<p>如果执行hexo d的时候发生了如下错误说明你没有安装<code>hexo-deployer-git</code>插件,在工作目录下把插件安装上就好了<br><img src="https://static01.imgkr.com/temp/e13aba141bf24458bedc22061aeded83.png" srcset="/img/loading.gif"></p>
+<p>如果执行hexo d的时候发生了如下错误说明你没有安装<code>hexo-deployer-git</code>插件,在工作目录下把插件安装上就好了<br><img src="https://static01.imgkr.com/temp/e13aba141bf24458bedc22061aeded83.png" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
 <figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">$ cnpm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></div></td></tr></table></figure>
 <h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><blockquote>
@@ -355,7 +356,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -385,11 +390,13 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
+    Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
       var dark = 'github-dark';
       var schema = document.documentElement.getAttribute('data-user-color-scheme');
@@ -506,8 +513,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -522,7 +530,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -530,7 +537,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -577,11 +584,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -601,7 +609,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

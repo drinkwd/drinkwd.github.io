@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="我曾踏足山巅，也曾进入低谷，二者都让我受益良多">
   <meta name="author" content="drinkwd">
   <meta name="keywords" content="drinkwd">
+  
   <title>关于 - drinkwd的个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -53,11 +54,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -151,13 +152,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -192,7 +193,7 @@
           >
           
             <div class="about-avatar">
-              <img src="/img/favicon.png" srcset="/img/loading.gif"
+              <img src="/img/favicon.png" srcset="/img/loading.gif" lazyload
                    class="img-fluid" alt="avatar">
             </div>
           
@@ -210,9 +211,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://github.com" class="
+        <a href=https://github.com class="
            hint--bottom hint--rounded"
            aria-label=GitHub
+           target="_blank"
         >
           <i class="iconfont icon-github-fill" aria-hidden="true"></i>
           
@@ -221,9 +223,10 @@
         
         
         
-        <a target="_blank" rel="noopener" href="https://github.com/drinkwd" class="
+        <a href=https://github.com/drinkwd class="
            hint--bottom hint--rounded"
            aria-label=掘金
+           target="_blank"
         >
           <i class="iconfont icon-mini-program-fill" aria-hidden="true"></i>
           
@@ -232,13 +235,14 @@
         
         
         
-        <a href="javascript:;" class="qr-trigger
+        <a  class="qr-trigger
            "
            
+           target="_self"
         >
           <i class="iconfont icon-qq-fill" aria-hidden="true"></i>
           
-            <img class="qr-img" src="/img/qq.png" srcset="/img/loading.gif" alt="qrcode" />
+            <img class="qr-img" src="/img/qq.png" srcset="/img/loading.gif" lazyload alt="qrcode" />
           
         </a>
       
@@ -246,16 +250,18 @@
   </div>
 </div>
 
-<article class="mt-5 markdown-body">
-  <h2 id="欢迎来到我的博客👨‍✈️"><a href="#欢迎来到我的博客👨‍✈️" class="headerlink" title="欢迎来到我的博客👨‍✈️"></a>欢迎来到我的博客👨‍✈️</h2><p>我是一名前端开发，喜欢各种好玩的技术，并不局限与前端，反正是没接触的东西都想了解一下，毕竟纵向和横向都要发展🎈。</p>
+<article class="about-content page-content mt-5">
+  <div class="markdown-body">
+    <h2 id="欢迎来到我的博客👨‍✈️"><a href="#欢迎来到我的博客👨‍✈️" class="headerlink" title="欢迎来到我的博客👨‍✈️"></a>欢迎来到我的博客👨‍✈️</h2><p>我是一名前端开发，喜欢各种好玩的技术，并不局限与前端，反正是没接触的东西都想了解一下，毕竟纵向和横向都要发展🎈。</p>
 <h2 id="原因👨‍🎓"><a href="#原因👨‍🎓" class="headerlink" title="原因👨‍🎓"></a>原因👨‍🎓</h2><p>写本站的原因就是因为我在开发过程中遇到的问题太多了🤷‍♀️，每次都是上网去找，下次遇见的时候再找可能就找不到了。还是自己记笔记的能力比较弱🤦‍♂️。如果你跟我一样就看看我的<a href="https://drinkwd.github.io/2021/02/20/%E6%88%91%E6%B1%82%E6%B1%82%E4%BD%A0%E5%86%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E5%90%A7/">第一篇文章</a>吧，可能你也会开始写博客了。</p>
 <h2 id="目标👨‍🍳"><a href="#目标👨‍🍳" class="headerlink" title="目标👨‍🍳"></a>目标👨‍🍳</h2><p>我还争取做到每周两更,把自己用到的好用的技术以及心得分享出来，毕竟是第一次在互联网上<code>逼逼赖赖</code>🎺,还是会有点屡不清头绪，如果你觉得我的文章对你还有点用出。那就去掘金给我个赞吧🙏。一起加油吧。</p>
 <p>以后我还会继续努力发出好的原创文章，再次感谢你的关注与阅读。</p>
-<h2 id="技术栈🎨"><a href="#技术栈🎨" class="headerlink" title="技术栈🎨"></a>技术栈🎨</h2><p><img src="/img/blog_img/about.png" srcset="/img/loading.gif"></p>
+<h2 id="技术栈🎨"><a href="#技术栈🎨" class="headerlink" title="技术栈🎨"></a>技术栈🎨</h2><p><img src="/img/blog_img/about.png" srcset="/img/loading.gif" lazyload></p>
 
+  </div>
+
+  
 </article>
-
-
 
               </div>
             </div>
@@ -332,8 +338,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -348,7 +355,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -356,7 +362,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -399,11 +405,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -423,7 +430,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

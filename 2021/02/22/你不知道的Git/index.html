@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -17,6 +17,7 @@
   <meta name="description" content="我曾踏足山巅，也曾进入低谷，二者都让我受益良多">
   <meta name="author" content="drinkwd">
   <meta name="keywords" content="drinkwd">
+  
   <title>你不知道的Git🍜 - drinkwd的个人博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body>
@@ -153,13 +154,13 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -257,8 +258,10 @@
 <p>产生原因：多人操作场景，其中一人将代码提交到远程<code>git</code>,另一个人也修改了文件准备<code>pull</code>的时候会产生该问题；</p>
 <p>解决方案一: 保留本地新修改的代码。暂存本地新修改代码，并把<code>git</code>服务器上的代码<code>pull</code>到本地，释放暂存 之后按照 <code>add</code> <code>commit</code> <code>push</code> 进行代码更新。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git stash<br>git pull origin master<br>git stash pop<br></code></pre></div></td></tr></table></figure>
+
 <p>解决方案二: 覆盖本地新修改的代码，只保留服务端的代码。直接退回到上一个版本然后把<code>git</code>服务器上的代码<code>pull</code>到本地</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git reset --hard<br>git pull origin master<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="gitignore-无效的解决方法"><a href="#gitignore-无效的解决方法" class="headerlink" title=".gitignore 无效的解决方法"></a>.gitignore 无效的解决方法</h3><p>场景再现: <code>.gitignore</code>第一次没有写全。比如老李新建了一个项目跟往常一样正常的提交，随着项目体积的不断增加，老李发现有一个文件的目录上传的<code>git</code>根本是没有必要的，还特别大。于是老李就在<code>.gitignore</code>中加入了响应的目录规则，但是并没有生效！！！</p>
 <p>产生原因：<code>.gitignore</code>只能忽略那些原来没有被<code>track</code>的文件，如果某些文件已经被纳入了版本管理中，则修改<code>.gitignore</code>是无效的</p>
 <p>解决办法：先把本地缓存删除，然后再提交。</p>
@@ -272,9 +275,13 @@
 </li>
 </ul>
 <h3 id="一个项目关联多个远程Git仓库"><a href="#一个项目关联多个远程Git仓库" class="headerlink" title="一个项目关联多个远程Git仓库"></a>一个项目关联多个远程Git仓库</h3><ul>
-<li>方法一: 使用 <code>git remote add</code> 命令<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git remote add github https://github.com/xxx/xxx.git <span class="hljs-comment">#关联github</span><br>git remote add gitee https://gitee.com/xxx/xxx.git <span class="hljs-comment"># 关联gitee</span><br></code></pre></div></td></tr></table></figure>
-缺点: 每次<code>push</code>的时候都要<code>push</code>两次才能推送到响应的远程。<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git push github master<br>git push gitee master<br></code></pre></div></td></tr></table></figure></li>
-<li>方法二：使用 git remote set-url 命令</li>
+<li><p>方法一: 使用 <code>git remote add</code> 命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git remote add github https://github.com/xxx/xxx.git <span class="hljs-comment">#关联github</span><br>git remote add gitee https://gitee.com/xxx/xxx.git <span class="hljs-comment"># 关联gitee</span><br></code></pre></div></td></tr></table></figure>
+<p>缺点: 每次<code>push</code>的时候都要<code>push</code>两次才能推送到响应的远程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git push github master<br>git push gitee master<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>方法二：使用 git remote set-url 命令</p>
+</li>
 </ul>
 <p>前提是你已经有了一个远程库了，再次添加另一个远程库。</p>
 <figure class="highlight dsconfig"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dsconfig"><span class="hljs-string">git</span> <span class="hljs-string">remote</span> <span class="hljs-built_in">set-url</span> <span class="hljs-built_in">--add</span> <span class="hljs-string">github</span> <span class="hljs-string">https</span>://<span class="hljs-string">git</span>.<span class="hljs-string">oschina</span>.<span class="hljs-string">net</span>/<span class="hljs-string">zxbetter</span>/<span class="hljs-string">test</span>.<span class="hljs-string">git</span><br></code></pre></div></td></tr></table></figure>
@@ -289,8 +296,9 @@
 </ul>
 <p>先创建本地分支并切换到该分支,<code>push</code>的时候可以直接指定远程分支名，远程分支会自动创建。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git checkout -b [本地分支名]<br>git add .<br>git commit -m <br>git push origin [远程分支名]<br></code></pre></div></td></tr></table></figure>
+
 <h3 id="git-给分支添加描述"><a href="#git-给分支添加描述" class="headerlink" title="git 给分支添加描述"></a>git 给分支添加描述</h3><p>场景再现：老张👨‍💻在开发项目的过程中经常有不同的需求，没有办法他只能建立不同的分支来维护自己的项目。稳定运行一个月之后，突然有一个地势的项目要改需求，他已经忘记了当时建立的分支是干什么的了如下图。当时暴怒，提出离职😲。</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9edbd786e8b94cd6b5615b2ffdc0a97b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9edbd786e8b94cd6b5615b2ffdc0a97b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li><p>解决办法一</p>
 <p>使用命令给分支添加描述</p>
@@ -302,22 +310,23 @@
 </ul>
 <p>使用<code>npm</code>包<code>git-br</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">$ npm install -g git-br <span class="hljs-comment"># 全局安装git-br </span><br>$ git config branch.[branch_name].description <span class="hljs-string">&quot;分支描述信息&quot;</span> <span class="hljs-comment"># 设置分支描述</span><br>$ git br <span class="hljs-comment"># 获取分支描述</span><br></code></pre></div></td></tr></table></figure>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a090e9f6619d4af0803d1ba02ceb3568~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a090e9f6619d4af0803d1ba02ceb3568~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <h3 id="Git操作失败并提示Another-git-process-seems-to-be-running"><a href="#Git操作失败并提示Another-git-process-seems-to-be-running" class="headerlink" title="Git操作失败并提示Another git process seems to be running"></a>Git操作失败并提示Another git process seems to be running</h3><p>原因：<code>Git</code>在使用过程中遭遇了奔溃，部分被上锁资源没有被释放导致的</p>
 <p>解决方案： 进入项目文件夹下的 <code>.git</code>文件中（显示隐藏文件夹或<code>rm .git/index.lock</code>）删除<code>index.lock</code>文件即可。</p>
 <h3 id="创建干净的本地分支并关联远程分支。"><a href="#创建干净的本地分支并关联远程分支。" class="headerlink" title="创建干净的本地分支并关联远程分支。"></a>创建干净的本地分支并关联远程分支。</h3><p>一般在一个分支下创建新的分支时，会把上个分支的内容复制到新分支中，如果我们不想要上个分支的内容，创建干净的分支，改怎么办呢？</p>
 <p>解决方案</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">git checkout -b 本地分支名  origin/远程分支名<br></code></pre></div></td></tr></table></figure>
 <h3 id="Git提交带表情🎈"><a href="#Git提交带表情🎈" class="headerlink" title="Git提交带表情🎈"></a>Git提交带表情🎈</h3><p>这种提交我们在github上很常见，他们是怎么把表情加上去的呢</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91849288ed57487aa4f41bcf2b14c281~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/91849288ed57487aa4f41bcf2b14c281~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <p>全局安装 <code>gitmoji-cli</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">npm i -g gitmoji-cli<br></code></pre></div></td></tr></table></figure>
 <p>安装完之后只需要在每次提交的时候加上相应的表情编码就可以了，不同的表情代表着不同的类别，使得代码提交更加清晰。<a target="_blank" rel="noopener" href="https://gitmoji.dev/">gitmoji</a><br>举个栗子🧨</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b755af5e2f3046f285c5fb7a64b2ca2d~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0938309f5b1d49b89b46aba0d793380a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b755af5e2f3046f285c5fb7a64b2ca2d~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0938309f5b1d49b89b46aba0d793380a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <p>发现我的提交前面已经有小表情了是不是非常明显👀。</p>
 <h3 id="Git提交规范"><a href="#Git提交规范" class="headerlink" title="Git提交规范"></a>Git提交规范</h3><p>废话少说先上图🤔</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2ea4df9ee5154effa9948a4477e4d1a8~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2ea4df9ee5154effa9948a4477e4d1a8~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <p>你是不是也一脸懵逼，这是在提交什么。一般来说<code>commit</code>应该一眼就能知道提交的是什么。也为了和一起开发的同事清楚的知道，你这次提交的内容🙄。网上大部分说的规范就是<a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#"><code>Angular </code>规范</a>英文好的同学可以去看看，也可以直接参考<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">阮一峰大佬的博客</a>了解了大概规范之后我们就找响应的工具帮我们弄成规范的样子就好啦😁。</p>
 <p><code>Commitizen</code>（合格<code>Commit message</code> 的工具）</p>
 <p>全局安装</p>
@@ -328,7 +337,7 @@
 <p>注意：因为commitizen工具是基于Node.js的,所以要保证你的项目下要有package.</p>
 </blockquote>
 <p>之后再提交代码的时候使用<code>git cz</code> 代替<code>git commit</code>命令就会出现提交类型的选择，使你提交的代码更规范。🤗</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14de749bc4c0436c9d77c78c96d5e739~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14de749bc4c0436c9d77c78c96d5e739~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
 <p><code>cz-customizable</code> 自定义中文配置</p>
 <p>你的选择类别可能是英文，转换成中文也特别简单<br>在项目中运行如下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs Bash">npm install cz-customizable --save-dev<br><br>commitizen init cz-customizable --save-dev --save-exact --force<br><br></code></pre></div></td></tr></table></figure>
@@ -362,7 +371,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -392,11 +405,13 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
+    Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
       var dark = 'github-dark';
       var schema = document.documentElement.getAttribute('data-user-color-scheme');
@@ -513,8 +528,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -529,7 +545,6 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -537,7 +552,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -584,11 +599,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -608,7 +624,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
