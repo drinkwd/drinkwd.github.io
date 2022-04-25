@@ -172,6 +172,10 @@ app.whenReady().then(() => {
 
 ##### 案例2 在渲染进程中打开新窗口
 当我们知道了`Electron`有主进程和渲染进程后，我们还要知道一件事😶，就是`Electron`的`API`方法和模块也是分为可以在主进程和渲染进程中使用的，具体[参考文档](https://www.electronjs.org/docs/latest/api/app)👀。那如果我们想在渲染进程中使用主进程中的模块方法时，可以使用`Electron Remote`解决🍠。
+- 安装`@electron/remote`包
+``` shell
+npm install --save @electron/remote
+```
 - 在`index.html`的`body`中增加如下代码
 ``` html
 <body>
@@ -573,6 +577,12 @@ module.exports = {
     }
   }
 };
+```
+> 如果在页面中使用了history路由可能在打包之后发现router-view中是空的
+```javascript
+解决方法就是在 App.vue 载入的时候，给 mounted 这个钩子里面手动跳转到你想要的首页页面的路径去就可以了。
+
+个人用的是 this.$router.push("/") ，打包后 router-view 的部分就显示正常了。
 ```
 #### 主进程与渲染进程通信
 - 用到两个模块 `ipcMain`和`ipcRender`
