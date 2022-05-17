@@ -106,4 +106,4 @@ deploy:
   type: git
   repository: https://github.com/drinkwd/drinkwd.github.io.git  #仓库地址
   branch: main # 远程分支
-all_minifier: false
+all_minifier: true
