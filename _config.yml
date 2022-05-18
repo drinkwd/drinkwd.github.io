@@ -5,7 +5,7 @@
 # Site
 title: drinkwd的个人博客 # 网站标题
 subtitle: '' # 网站副标题
-description: '我曾踏足山巅，也曾进入低谷，二者都让我受益良多' #网站描述
+description: '一个你来了，就走不出去的前端博客' #网站描述
 keywords: drinkwd #网站关键字
 author: drinkwd # 作者
 language: zh-CN # 语言，官网明确说明不同主题对应的简体中文字段可能不一样，要参照你的主题文档自行设置
@@ -107,3 +107,6 @@ deploy:
   repository: https://github.com/drinkwd/drinkwd.github.io.git  #仓库地址
   branch: main # 远程分支
 all_minifier: true
+# sitemap
+sitemap:
+  path: sitemap.xml
