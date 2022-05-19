@@ -183,7 +183,9 @@ custom_js: '/live2d-widget/autoload.js'
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
-custom_css: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css'
+# https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css 原有cdn
+
+custom_css: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css'
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
@@ -868,28 +870,34 @@ static_prefix:
   # 图标库，包含了大量社交类图标，主题依赖的不包含在内，因此可自行修改，详见 https://hexo.fluid-dev.com/docs/icon/
   # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
   iconfont: //at.alicdn.com/t/font_1736178_kmeydafke9r.css
-
+  # https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/ 原有cdn
   anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/
 
   github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
 
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/
+  # https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/ 原有cdn 外网快，内网加载不通
+  jquery: http://cdn.staticfile.org/jquery/3.5.1/
 
-  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/
+  # https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/ 原有cdn 外网快，内网加载不通
+  bootstrap: https://cdn.staticfile.org/bootstrap/4.5.3/
 
   highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/
 
   prismjs: https://cdn.jsdelivr.net/npm/prismjs@1.22.0/
 
-  tocbot: https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/
+  # https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.css
+  tocbot: https://cdn.staticfile.org/tocbot/4.12.0/
 
-  typed: https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
+  #  https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
+  typed: https://cdn.staticfile.org/typed.js/2.0.12/
 
   fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
 
-  nprogress: https://cdn.jsdelivr.net/npm/nprogress@0.2.0/
+  # https://cdn.jsdelivr.net/npm/nprogress@0.2.0/
+  nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
 
-  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/
+  #  https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/ 
+  mathjax: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.1.2/es5/
 
   katex: https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/
 
