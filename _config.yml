@@ -103,10 +103,13 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repository: https://github.com/drinkwd/drinkwd.github.io.git  #仓库地址
-  branch: main # 远程分支
-all_minifier: true
+- type: git
+  repo: https://github.com/drinkwd/drinkwd.github.io.git
+  branch: main
+- type: git
+  repo: https://gitee.com/drinkwd/drinkwd.git
+  branch: master
+  all_minifier: true
 # sitemap
 sitemap:
   path: sitemap.xml
