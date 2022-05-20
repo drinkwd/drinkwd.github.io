@@ -65,7 +65,8 @@ function loadWidget(config) {
 				window.ASTEROIDSPLAYERS.push(new Asteroids());
 			} else {
 				const script = document.createElement("script");
-				script.src = "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
+				// "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js"; 国内cdn没找到只能用本地加载
+				script.src = "/lib/asteroids.js";
 				document.head.appendChild(script);
 			}
 		});

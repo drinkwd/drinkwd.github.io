@@ -871,27 +871,35 @@ static_prefix:
   # Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
   iconfont: //at.alicdn.com/t/font_1736178_kmeydafke9r.css
   # https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/ 原有cdn
-  anchor: https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/
+  anchor: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/
 
-  github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/
+  # https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/ 原有cdn
+
+  github_markdown: https://cdn.staticfile.org/github-markdown-css/4.0.0/
 
   # https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/ 原有cdn 外网快，内网加载不通
   jquery: http://cdn.staticfile.org/jquery/3.5.1/
 
   # https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/ 原有cdn 外网快，内网加载不通
+
   bootstrap: https://cdn.staticfile.org/bootstrap/4.5.3/
 
-  highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/
+  # https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/
 
-  prismjs: https://cdn.jsdelivr.net/npm/prismjs@1.22.0/
+  highlightjs: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/
+
+  # https://cdn.jsdelivr.net/npm/prismjs@1.22.0/ 
+
+  prismjs: https://cdn.staticfile.org/prism/1.22.0/
 
   # https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.css
   tocbot: https://cdn.staticfile.org/tocbot/4.12.0/
 
-  #  https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
+  # https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/
   typed: https://cdn.staticfile.org/typed.js/2.0.12/
 
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/
+  # https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/ 
+  fancybox: https://cdn.staticfile.org/fancybox/3.5.7/
 
   # https://cdn.jsdelivr.net/npm/nprogress@0.2.0/
   nprogress: https://cdn.staticfile.org/nprogress/0.2.0/
@@ -899,15 +907,19 @@ static_prefix:
   #  https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/ 
   mathjax: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/mathjax/3.1.2/es5/
 
-  katex: https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/
+  # https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/ 
+  katex: https://cdn.staticfile.org/KaTeX/0.12.0/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/
+  # https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/ 
+  clipboard: https://cdn.staticfile.org/clipboard.js/2.0.6/
 
-  mermaid: https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/
+  # https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/ 
+  mermaid: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mermaid/8.8.3/
 
-  valine: https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
+  # https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/
+  valine: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/valine/1.4.14/
 
   waline: https://cdn.jsdelivr.net/npm/@waline/client@0.4.2/dist/
 
@@ -917,4 +929,4 @@ static_prefix:
 
   twikoo: https://cdn.jsdelivr.net/npm/twikoo@0.1.15/dist/
 
-  hint: /lib/hint/
+  hint: https://cdn.staticfile.org/hint.css/2.7.0/
