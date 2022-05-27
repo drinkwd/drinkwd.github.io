@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://drinkwd.github.io/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/</loc>
+    
+    <lastmod>2022-05-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://drinkwd.github.io/2022/05/18/%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%8D%E5%9C%A8%E5%AD%A4%E5%8D%95%F0%9F%8E%A8/</loc>
     
     <lastmod>2022-05-20</lastmod>
@@ -137,15 +146,6 @@
   </url>
   
   <url>
-    <loc>https://drinkwd.github.io/2022/05/17/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
-    
-    <lastmod>2022-05-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://drinkwd.github.io/2022/05/17/%E6%88%91%E6%B1%82%E6%B1%82%E4%BD%A0%E5%86%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E5%90%A7/</loc>
     
     <lastmod>2022-05-17</lastmod>
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://drinkwd.github.io/2022/05/17/echarts%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9B%BE/</loc>
+    <loc>https://drinkwd.github.io/2022/05/17/%E5%89%8D%E7%AB%AF%E5%9F%8B%E7%82%B9%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
     
     <lastmod>2022-05-17</lastmod>
     
@@ -165,6 +165,15 @@
   
   <url>
     <loc>https://drinkwd.github.io/2022/05/17/keep-alive%E4%B8%8Erouter-view%E7%9A%84%E7%9B%B8%E7%88%B1%E7%9B%B8%E6%9D%80/</loc>
+    
+    <lastmod>2022-05-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/2022/05/17/echarts%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9B%BE/</loc>
     
     <lastmod>2022-05-17</lastmod>
     
@@ -220,7 +229,7 @@
 
   <url>
     <loc>https://drinkwd.github.io/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -228,112 +237,119 @@
   
   <url>
     <loc>https://drinkwd.github.io/tags/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Electron/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Vue/</loc>
-    <lastmod>2022-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://drinkwd.github.io/tags/Echart/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/uni-app/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/tags/Echart/</loc>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Nginx/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/React/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/IconFont/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Git/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/tags/Nuxt3/</loc>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/hexo/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/GitHub-Pages/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Fluid/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/NPM/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/NodeJS/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Axios/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Python/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -342,14 +358,14 @@
   
   <url>
     <loc>https://drinkwd.github.io/categories/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-05-20</lastmod>
+    <lastmod>2022-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
