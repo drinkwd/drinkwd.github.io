@@ -1,1 +1,641 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="dark"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="drinkwd"><meta name="keywords" content="drinkwd"><meta name="description" content="前言相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了echarts中的行政地图，街道地图也是很常见的，今天主要来说一下在vue中调用高德地图遇到的一些问题🤪。 申请高德key无论我们使用任何方式调用高德地图都需要在高德地图开放平台中申请key😏  注册帐号  访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使"><meta property="og:type" content="article"><meta property="og:title" content="VUE项目中调用高德地图🤞"><meta property="og:url" content="https://drinkwd.github.io/2022/05/17/VUE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B0%83%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%F0%9F%A4%9E/index.html"><meta property="og:site_name" content="drinkwd的个人博客"><meta property="og:description" content="前言相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了echarts中的行政地图，街道地图也是很常见的，今天主要来说一下在vue中调用高德地图遇到的一些问题🤪。 申请高德key无论我们使用任何方式调用高德地图都需要在高德地图开放平台中申请key😏  注册帐号  访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index14.jpg"><meta property="article:published_time" content="2022-05-17T00:47:32.334Z"><meta property="article:modified_time" content="2022-05-17T00:47:32.334Z"><meta property="article:author" content="drinkwd"><meta property="article:tag" content="Vue"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index14.jpg"><title>VUE项目中调用高德地图🤞 - drinkwd的个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"drinkwd.github.io",root:"/",version:"1.8.14",typing:{enable:!0,typeSpeed:70,cursorChar:"",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!1,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:null,app_key:null,server_url:null,path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>drinkwd的博客</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/blog_img/banner14.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="VUE项目中调用高德地图🤞"></span><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> drinkwd </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2022-05-17 08:47" pubdate>2022年5月17日 早上</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 5.5k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 46 分钟 </span><span id="busuanzi_container_page_pv" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto"><h1 style="display:none">VUE项目中调用高德地图🤞</h1><div class="markdown-body"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了<code>echarts</code>中的行政地图，街道地图也是很常见的，今天主要来说一下在<code>vue</code>中调用高德地图遇到的一些问题🤪。</p><h2 id="申请高德key"><a href="#申请高德key" class="headerlink" title="申请高德key"></a>申请高德key</h2><p>无论我们使用任何方式调用高德地图都需要在<a target="_blank" rel="noopener" href="https://lbs.amap.com/?ref=https://console.amap.com">高德地图开放平台</a>中申请<code>key</code>😏</p><ul><li>注册帐号</li></ul><p>访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使用公司邮箱进行注册）区别如下👇。</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4f251d8f6d04c47882a1fdf710ec56a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08aceac969b04ae59328f01790afa5aa~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>创建应用</li></ul><p>新建应用时名称，与类型可以随意填写，尽量填写的与开发的应用一直，方便后期维护🚘</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/64d0ece0edcb46cbbbc0296f5dfe8ed3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>应用创建成功之后，点击添加就会需要我们选择需要使用高德地图的哪些服务，不同的服务平台，对应填写的内容也有所区别🎪，例如<code>Android</code>需要填写<code>App</code>包名，<code>Android</code>的<code>SHA1</code>码等等，因为我这次的项目是个大屏项目所以就选择<code>Web端（JSAPI）</code>😮</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8103e4a7817a4fe0a9b860e914bae98b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>信息填写完毕之后就会在当前应用下生成对应的Key值和<strong>安全密钥</strong>（安全密钥在之前的版本中是没有的）</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8870fbfa6014366bc27b6c32b8d2f2b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><h4 id="vue-amap"><a href="#vue-amap" class="headerlink" title="vue-amap"></a><a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/"><code>vue-amap</code></a></h4><p><code>vue-amap</code>是基于 <code>Vue 2.x</code>与高德的地图组件👨‍🦰，提供一些基础和高级的功能，例如：地图扎点，信息窗体，搜索组件，类型插件等等，不需要我们在造轮子了，所以我们就来试一试🎑。</p><h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><blockquote><p>当我们在使用组件的时候都会先看一下文档，但是当我在看文档的时候发现，文档中只有对应的<code>api</code>而没有示例，很难下手，于是在<a target="_blank" rel="noopener" href="https://github.com/ElemeFE/vue-amap/issues/646"><code>issues</code></a>中找到了答案。</p></blockquote><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ecec3f94258544aebbfe5c4d1035d806~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p>解决方案也很简单</p><ul><li>将项目下载到本地</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4936e46f3e2044d4b58ce15f06e43266~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>修改<code>src/docs/index.html</code>里的<code>docsify</code>引用<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">将<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//unpkg.com/docsify/lib/docsify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>修改为<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//unpkg.com/docsify@4.11.6/lib/docsify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4704daecc802444287432df7a78bbcf7~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>执行<code>npm install</code> <code>npm start</code>默认在<code>4201</code>端口就会启动项目就可以看到项目示例了。</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0b501477ca64441787d6b22fb890af3b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h5 id="项目中应用"><a href="#项目中应用" class="headerlink" title="项目中应用"></a>项目中应用</h5><ul><li><code>npm</code>安装<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm install vue-amap <span class="hljs-comment">--save</span><br></code></pre></div></td></tr></table></figure></li><li><code>main.js</code>中挂载<code>vue-amap</code></li></ul><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueAMap</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;<br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">VueAMap</span>);<br><span class="hljs-title class_">VueAMap</span>.<span class="hljs-title function_">initAMapApiLoader</span>(&#123;<br>  <span class="hljs-comment">//申请地址 https://lbs.amap.com/ 选择web端jsAPI</span><br>  <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;自己申请的高德地图key&#x27;</span>, <br>  <span class="hljs-comment">// 插件集合，用到什么插件就使用什么插件</span><br>  <span class="hljs-attr">plugin</span>: [<span class="hljs-string">&#x27;AMap.Autocomplete&#x27;</span>, <span class="hljs-string">&#x27;AMap.PlaceSearch&#x27;</span>, <span class="hljs-string">&#x27;AMap.Scale&#x27;</span>, <span class="hljs-string">&#x27;AMap.OverView&#x27;</span>, <span class="hljs-string">&#x27;AMap.ToolBar&#x27;</span>, <span class="hljs-string">&#x27;AMap.MapType&#x27;</span>, <span class="hljs-string">&#x27;AMap.PolyEditor&#x27;</span>, <span class="hljs-string">&#x27;AMap.CircleEditor&#x27;</span>],<br>  <span class="hljs-attr">v</span>: <span class="hljs-string">&#x27;1.4.4&#x27;</span>, <span class="hljs-comment">// 高德sdk版本，最新的sdk已经出到了2.0</span><br>  <span class="hljs-comment">//官网解释：JSAPI 2.0 提供的开发接口与 1.4 版本达到 99%的兼容度，但是为了保证插件的稳定性我们还是选择1.4.4。</span><br>&#125;)<br></code></pre></div></td></tr></table></figure><ul><li>组件用法<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">el-amap</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;map&quot;</span> <span class="hljs-attr">vid</span>=<span class="hljs-string">&quot;amapDemo&quot;</span> <span class="hljs-attr">:center</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">:zoom</span>=<span class="hljs-string">&quot;zoom&quot;</span> <span class="hljs-attr">:events</span>=<span class="hljs-string">&quot;events&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-demo&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">el-amap</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 建议将zoom,center等可配置的项均写在配置文件中，方便打包之后进行修改。</span></span><br><span class="language-javascript">    <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">          <span class="hljs-attr">zoom</span>: <span class="hljs-number">12</span>,</span><br><span class="language-javascript">          <span class="hljs-attr">center</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>],</span><br><span class="language-javascript">          <span class="hljs-attr">events</span>: &#123;</span><br><span class="language-javascript">            <span class="hljs-string">&#x27;click&#x27;</span>: <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">              <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;map clicked&#x27;</span>);</span><br><span class="language-javascript">            &#125;</span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">        &#125;;</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li></ul><p>以上就是在<code>vue</code>项目中使用<code>vue-amap</code>调用高德地图<code>api</code>的基本使用😀，具体对地图的操作可以根据文档的规范来就可以了，在使用的过程中可能会遇到几个问题😣。</p><h3 id="刷新页面，地图加载偶尔失败"><a href="#刷新页面，地图加载偶尔失败" class="headerlink" title="刷新页面，地图加载偶尔失败"></a>刷新页面，地图加载偶尔失败</h3><ul><li>在main.js中加入以下内容。<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">// 解决地图刷新显示不出来</span><br><span class="hljs-keyword">const</span> amapKeys = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(<span class="hljs-variable language_">localStorage</span>).<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> key.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/^_AMap_/</span>))<br>amapKeys.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">// console.log(key)</span><br>  <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">removeItem</span>(key)<br>&#125;)<br></code></pre></div></td></tr></table></figure></li></ul><h3 id="在绑定插件的时候，控制台报错-a-d-split-is-not-a-function"><a href="#在绑定插件的时候，控制台报错-a-d-split-is-not-a-function" class="headerlink" title="在绑定插件的时候，控制台报错 a[d].split is not a function"></a>在绑定插件的时候，控制台报错 <code>a[d].split is not a function</code></h3><ul><li>含有地图组件的路由不使用懒加载的方式（<em>临时方案</em>）</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8562a6608f514f6db0a4a9409521c31b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><blockquote><p>注： <code>vue-amap</code> 是不支持<code>vue3.x</code>，😥并且不能绑定高德地图新版<code>api</code>对应的安全密钥<code>jscode</code>,可能会导致部分服务无法使用。 对应的<code>vue3</code>版本的插件<a target="_blank" rel="noopener" href="https://vue-amap.guyixi.cn/">看这里</a>🧵。</p></blockquote><h2 id="原生调用高德API"><a href="#原生调用高德API" class="headerlink" title="原生调用高德API"></a>原生调用高德API</h2><ul><li>安装官方提供的loader<figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @amap/amap-jsapi-loader --save<br></code></pre></div></td></tr></table></figure></li><li>main.js中绑定安全密钥jscode（不绑定部分功能无法使用）<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 该写法只推荐在开发阶段，如果在生产阶段建议采用反向代理</span><br><span class="hljs-comment">// 官网说明https://lbs.amap.com/api/javascript-api/guide/abc/prepare</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">_AMapSecurityConfig</span> = &#123;<br>  <span class="hljs-attr">securityJsCode</span>: <span class="hljs-string">&#x27;jscode&#x27;</span> <span class="hljs-comment">// 输入你的jscode</span><br>&#125;<br></code></pre></div></td></tr></table></figure></li><li>封装组件<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;home_div&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">AMapLoader</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@amap/amap-jsapi-loader&#x27;</span>;</span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Mapview&quot;</span>,</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">map</span>: <span class="hljs-literal">null</span>,</span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">initAMap</span>();</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">initAMap</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">            <span class="hljs-title class_">AMapLoader</span>.<span class="hljs-title function_">load</span>(&#123;</span><br><span class="language-javascript">                <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;xxx&#x27;</span>,  <span class="hljs-comment">//设置您的key</span></span><br><span class="language-javascript">                <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;2.0&quot;</span>, <span class="hljs-comment">// 高德地图版本</span></span><br><span class="language-javascript">                <span class="hljs-attr">plugins</span>: [<span class="hljs-string">&#x27;AMap.ToolBar&#x27;</span>, <span class="hljs-string">&#x27;AMap.Driving&#x27;</span>], <span class="hljs-comment">// 插件</span></span><br><span class="language-javascript">                <span class="hljs-title class_">AMapUI</span>: &#123; <span class="hljs-comment">// 高德地图UI组件库，可不写，内部提供了覆盖物标注点，以及部分模块的封装</span></span><br><span class="language-javascript">                    <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;1.1&quot;</span>,</span><br><span class="language-javascript">                    <span class="hljs-attr">plugins</span>: [],</span><br><span class="language-javascript">                &#125;,</span><br><span class="language-javascript">                <span class="hljs-title class_">Loca</span>: &#123; <span class="hljs-comment">// Loca版本(高性能地图数据可视化库) 可不写</span></span><br><span class="language-javascript">                    <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;2.0&quot;</span></span><br><span class="language-javascript">                &#125;,</span><br><span class="language-javascript">            &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">AMap</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">                <span class="hljs-comment">// container渲染的id</span></span><br><span class="language-javascript">                <span class="hljs-variable language_">this</span>.<span class="hljs-property">map</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMap</span>.<span class="hljs-title class_">Map</span>(<span class="hljs-string">&quot;container&quot;</span>, &#123;</span><br><span class="language-javascript">                    <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">// 当前缩放级别</span></span><br><span class="language-javascript">                    <span class="hljs-attr">zooms</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">22</span>], <span class="hljs-comment">// 缩放级别范围</span></span><br><span class="language-javascript">                    <span class="hljs-attr">center</span>: [<span class="hljs-number">105.602725</span>, <span class="hljs-number">37.076636</span>], <span class="hljs-comment">// 中心点</span></span><br><span class="language-javascript">                &#125;);</span><br><span class="language-javascript">            &#125;).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> &#123;</span><br><span class="language-javascript">                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e);</span><br><span class="language-javascript">            &#125;)</span><br><span class="language-javascript">        &#125;,</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>  <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.home_div</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">&#125;</span><br><span class="language-css"><span class="hljs-selector-id">#container</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li></ul><h4 id="混合使用（vue-amap与原生API混合使用）"><a href="#混合使用（vue-amap与原生API混合使用）" class="headerlink" title="混合使用（vue-amap与原生API混合使用）"></a>混合使用（vue-amap与原生API混合使用）</h4><ul><li><p>只想通过 <code>vue-amap</code>引入高德地图，而部分实例化的操作直接基于高德地图的 <code>sdk</code>完成</p><blockquote><p>实例化操作不是加载地图，简单来说就是用一些属性去实例化地图的这个类 <code>new xxx()</code> 代表的就是实例化<code>xxx</code>🛸。这样就不需要在使用<code>el-amap</code>中的<code>center</code>属性和<code>zoom</code>属性了🎨，因为已经通过原生的方式进行实例化了👜。</p></blockquote><figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-keyword">import</span> &#123; lazyAMapApiLoaderInstance &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;<br>lazyAMapApiLoaderInstance.load().<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br>  <span class="hljs-regexp">//</span> your code ...<br>  this.map = <span class="hljs-keyword">new</span> AMap.<span class="hljs-built_in">Map</span>(<span class="hljs-string">&#x27;amapContainer&#x27;</span>, &#123;<br>    center: <span class="hljs-keyword">new</span> AMap.LngLat(<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>)<br>  &#125;);<br>&#125;);<br></code></pre></div></td></tr></table></figure></li><li><p>在<code>vue-amap</code>中引入高德原生<code>SDK</code>只需在<code>el-amap</code>上绑定<code>amap-manager</code>就可以拿到高德原生<code>AMap.Map</code>实例<a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/zh-cn/introduction/compatible">文档地址</a></p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-page-container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-amap</span> <span class="hljs-attr">vid</span>=<span class="hljs-string">&quot;amapDemo&quot;</span> <span class="hljs-attr">:center</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">:amap-manager</span>=<span class="hljs-string">&quot;amapManager&quot;</span> <span class="hljs-attr">:zoom</span>=<span class="hljs-string">&quot;zoom&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-demo&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-amap</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;add()&quot;</span>&gt;</span>add marker<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.amap-demo</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span> <span class="hljs-meta">!important</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-comment">// NPM 方式</span></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">AMapManager</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">let</span> amapManager = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMapManager</span>();</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">zoom</span>: <span class="hljs-number">12</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">center</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>],</span><br><span class="language-javascript">      amapManager,</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">add</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">let</span> o = amapManager.<span class="hljs-title function_">getMap</span>();</span><br><span class="language-javascript">      <span class="hljs-keyword">let</span> marker = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMap</span>.<span class="hljs-title class_">Marker</span>(&#123;</span><br><span class="language-javascript">        <span class="hljs-attr">position</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.177646</span>]</span><br><span class="language-javascript">      &#125;);</span><br><span class="language-javascript">      marker.<span class="hljs-title function_">setMap</span>(o);</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>网上针对高德地图的调用方案也有很多，我也是刚刚接触，文中的观点都是自身的看法，最后说一下自身对选型的判断🎑。</p><ul><li>如果是大屏类的项目，没有过多的交互只是简单扎点，展示建议使用<code>vue-amap</code>🤙🤙🤙。</li><li>如果是已地图为中心的项目，包括人员路线，轨迹等等比较复杂的交互建议使用原生🤙🤙🤙。</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c721b629f48f4fdd90071c8751616844~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><p><a target="_blank" rel="noopener" href="https://lbs.amap.com/api/javascript-api/guide/abc/prepare">高德地图API</a></p></li><li><p><a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/">vue-amap</a></p></li></ul></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/Vue/">Vue</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！谢谢</p><div class="post-prevnext"><article class="post-prev col-6"><a href="/2022/05/17/echarts%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9B%BE/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">echarts自定义地图</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/2021/02/27/%E6%8F%90%E9%AB%98%E9%80%BC%E6%A0%BC%E7%9A%84%E5%87%A0%E4%B8%AA%E7%BD%91%E7%AB%99/"><span class="hidden-mobile">提高逼格的几个网站</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments" lazyload><script type="text/javascript">Fluid.utils.loadComments("#comments",(function(){var t=document.documentElement.getAttribute("data-user-color-scheme");t="dark"===t?"github-dark":"github-light",window.UtterancesThemeLight="github-light",window.UtterancesThemeDark="github-dark";var e=document.createElement("script");e.setAttribute("src","https://utteranc.es/client.js"),e.setAttribute("repo","drinkwd/drinkwd.github.io"),e.setAttribute("issue-term","title"),e.setAttribute("label","utterances"),e.setAttribute("theme",t),e.setAttribute("crossorigin","anonymous"),document.getElementById("comments").appendChild(e)}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div class="toc-body" id="toc-body"></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div></footer><script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js"></script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/live2d-widget/autoload.js"></script><script src="/js/boot.js"></script><div id="aplayer" style="right:0"></div><link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script defer src="/js/music.js"></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="drinkwd">
+  <meta name="keywords" content="drinkwd">
+  
+    <meta name="description" content="前言相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了echarts中的行政地图，街道地图也是很常见的，今天主要来说一下在vue中调用高德地图遇到的一些问题🤪。 申请高德key无论我们使用任何方式调用高德地图都需要在高德地图开放平台中申请key😏  注册帐号  访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUE项目中调用高德地图🤞">
+<meta property="og:url" content="https://drinkwd.github.io/2022/05/17/VUE%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B0%83%E7%94%A8%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE%F0%9F%A4%9E/index.html">
+<meta property="og:site_name" content="drinkwd的个人博客">
+<meta property="og:description" content="前言相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了echarts中的行政地图，街道地图也是很常见的，今天主要来说一下在vue中调用高德地图遇到的一些问题🤪。 申请高德key无论我们使用任何方式调用高德地图都需要在高德地图开放平台中申请key😏  注册帐号  访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index14.jpg">
+<meta property="article:published_time" content="2022-05-17T00:47:32.334Z">
+<meta property="article:modified_time" content="2022-05-17T00:47:32.334Z">
+<meta property="article:author" content="drinkwd">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index14.jpg">
+  
+  
+  <title>VUE项目中调用高德地图🤞 - drinkwd的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>drinkwd的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/blog_img/banner14.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="VUE项目中调用高德地图🤞">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      drinkwd
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-17 08:47" pubdate>
+        2022年5月17日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      46 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">VUE项目中调用高德地图🤞</h1>
+            
+            <div class="markdown-body">
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>相信大家或多或少都接触过在大屏的项目，在大屏项目中除了用到了<code>echarts</code>中的行政地图，街道地图也是很常见的，今天主要来说一下在<code>vue</code>中调用高德地图遇到的一些问题🤪。</p>
+<h2 id="申请高德key"><a href="#申请高德key" class="headerlink" title="申请高德key"></a>申请高德key</h2><p>无论我们使用任何方式调用高德地图都需要在<a target="_blank" rel="noopener" href="https://lbs.amap.com/?ref=https://console.amap.com">高德地图开放平台</a>中申请<code>key</code>😏</p>
+<ul>
+<li>注册帐号</li>
+</ul>
+<p>访问高德地图开发平台根据实际情况填写就可以🍜（实名认证的时候选择个人就可以，如果是企业级的项目，可能会涉及人员变动，建议使用公司邮箱进行注册）区别如下👇。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f4f251d8f6d04c47882a1fdf710ec56a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/08aceac969b04ae59328f01790afa5aa~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>创建应用 </li>
+</ul>
+<p>新建应用时名称，与类型可以随意填写，尽量填写的与开发的应用一直，方便后期维护🚘</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/64d0ece0edcb46cbbbc0296f5dfe8ed3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>应用创建成功之后，点击添加就会需要我们选择需要使用高德地图的哪些服务，不同的服务平台，对应填写的内容也有所区别🎪，例如<code>Android</code>需要填写<code>App</code>包名，<code>Android</code>的<code>SHA1</code>码等等，因为我这次的项目是个大屏项目所以就选择<code>Web端（JSAPI）</code>😮</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8103e4a7817a4fe0a9b860e914bae98b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>信息填写完毕之后就会在当前应用下生成对应的Key值和<strong>安全密钥</strong>（安全密钥在之前的版本中是没有的）</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8870fbfa6014366bc27b6c32b8d2f2b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><h4 id="vue-amap"><a href="#vue-amap" class="headerlink" title="vue-amap"></a><a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/"><code>vue-amap</code></a></h4><p><code>vue-amap</code>是基于 <code>Vue 2.x </code>与高德的地图组件👨‍🦰，提供一些基础和高级的功能，例如：地图扎点，信息窗体，搜索组件，类型插件等等，不需要我们在造轮子了，所以我们就来试一试🎑。</p>
+<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><blockquote>
+<p>当我们在使用组件的时候都会先看一下文档，但是当我在看文档的时候发现，文档中只有对应的<code>api</code>而没有示例，很难下手，于是在<a target="_blank" rel="noopener" href="https://github.com/ElemeFE/vue-amap/issues/646"><code>issues</code></a>中找到了答案。</p>
+</blockquote>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ecec3f94258544aebbfe5c4d1035d806~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p>解决方案也很简单</p>
+<ul>
+<li>将项目下载到本地</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4936e46f3e2044d4b58ce15f06e43266~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>修改<code>src/docs/index.html</code>里的<code>docsify</code>引用<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">将<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//unpkg.com/docsify/lib/docsify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>修改为<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//unpkg.com/docsify@4.11.6/lib/docsify.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4704daecc802444287432df7a78bbcf7~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>执行<code>npm install</code> <code>npm start</code>默认在<code>4201</code>端口就会启动项目就可以看到项目示例了。</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0b501477ca64441787d6b22fb890af3b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h5 id="项目中应用"><a href="#项目中应用" class="headerlink" title="项目中应用"></a>项目中应用</h5><ul>
+<li><code>npm</code>安装<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm install vue-amap <span class="hljs-comment">--save</span><br></code></pre></div></td></tr></table></figure></li>
+<li><code>main.js</code>中挂载<code>vue-amap</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueAMap</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;<br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">VueAMap</span>);<br><span class="hljs-title class_">VueAMap</span>.<span class="hljs-title function_">initAMapApiLoader</span>(&#123;<br>  <span class="hljs-comment">//申请地址 https://lbs.amap.com/ 选择web端jsAPI</span><br>  <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;自己申请的高德地图key&#x27;</span>, <br>  <span class="hljs-comment">// 插件集合，用到什么插件就使用什么插件</span><br>  <span class="hljs-attr">plugin</span>: [<span class="hljs-string">&#x27;AMap.Autocomplete&#x27;</span>, <span class="hljs-string">&#x27;AMap.PlaceSearch&#x27;</span>, <span class="hljs-string">&#x27;AMap.Scale&#x27;</span>, <span class="hljs-string">&#x27;AMap.OverView&#x27;</span>, <span class="hljs-string">&#x27;AMap.ToolBar&#x27;</span>, <span class="hljs-string">&#x27;AMap.MapType&#x27;</span>, <span class="hljs-string">&#x27;AMap.PolyEditor&#x27;</span>, <span class="hljs-string">&#x27;AMap.CircleEditor&#x27;</span>],<br>  <span class="hljs-attr">v</span>: <span class="hljs-string">&#x27;1.4.4&#x27;</span>, <span class="hljs-comment">// 高德sdk版本，最新的sdk已经出到了2.0</span><br>  <span class="hljs-comment">//官网解释：JSAPI 2.0 提供的开发接口与 1.4 版本达到 99%的兼容度，但是为了保证插件的稳定性我们还是选择1.4.4。</span><br>&#125;)<br></code></pre></div></td></tr></table></figure>
+<ul>
+<li>组件用法<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">el-amap</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;map&quot;</span> <span class="hljs-attr">vid</span>=<span class="hljs-string">&quot;amapDemo&quot;</span> <span class="hljs-attr">:center</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">:zoom</span>=<span class="hljs-string">&quot;zoom&quot;</span> <span class="hljs-attr">:events</span>=<span class="hljs-string">&quot;events&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-demo&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">el-amap</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 建议将zoom,center等可配置的项均写在配置文件中，方便打包之后进行修改。</span></span><br><span class="language-javascript">    <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">          <span class="hljs-attr">zoom</span>: <span class="hljs-number">12</span>,</span><br><span class="language-javascript">          <span class="hljs-attr">center</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>],</span><br><span class="language-javascript">          <span class="hljs-attr">events</span>: &#123;</span><br><span class="language-javascript">            <span class="hljs-string">&#x27;click&#x27;</span>: <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">              <span class="hljs-title function_">alert</span>(<span class="hljs-string">&#x27;map clicked&#x27;</span>);</span><br><span class="language-javascript">            &#125;</span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">        &#125;;</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>以上就是在<code>vue</code>项目中使用<code>vue-amap</code>调用高德地图<code>api</code>的基本使用😀，具体对地图的操作可以根据文档的规范来就可以了，在使用的过程中可能会遇到几个问题😣。</p>
+<h3 id="刷新页面，地图加载偶尔失败"><a href="#刷新页面，地图加载偶尔失败" class="headerlink" title="刷新页面，地图加载偶尔失败"></a>刷新页面，地图加载偶尔失败</h3><ul>
+<li>在main.js中加入以下内容。<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">// 解决地图刷新显示不出来</span><br><span class="hljs-keyword">const</span> amapKeys = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(<span class="hljs-variable language_">localStorage</span>).<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> key.<span class="hljs-title function_">match</span>(<span class="hljs-regexp">/^_AMap_/</span>))<br>amapKeys.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">key</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">// console.log(key)</span><br>  <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">removeItem</span>(key)<br>&#125;)<br></code></pre></div></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="在绑定插件的时候，控制台报错-a-d-split-is-not-a-function"><a href="#在绑定插件的时候，控制台报错-a-d-split-is-not-a-function" class="headerlink" title="在绑定插件的时候，控制台报错 a[d].split is not a function"></a>在绑定插件的时候，控制台报错 <code>a[d].split is not a function</code></h3><ul>
+<li>含有地图组件的路由不使用懒加载的方式（<em>临时方案</em>）</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8562a6608f514f6db0a4a9409521c31b~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>注： <code>vue-amap</code> 是不支持<code>vue3.x</code>，😥并且不能绑定高德地图新版<code>api</code>对应的安全密钥<code>jscode</code>,可能会导致部分服务无法使用。 对应的<code>vue3</code>版本的插件<a target="_blank" rel="noopener" href="https://vue-amap.guyixi.cn/">看这里</a>🧵。</p>
+</blockquote>
+<h2 id="原生调用高德API"><a href="#原生调用高德API" class="headerlink" title="原生调用高德API"></a>原生调用高德API</h2><ul>
+<li>安装官方提供的loader <figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @amap/amap-jsapi-loader --save<br></code></pre></div></td></tr></table></figure></li>
+<li>main.js中绑定安全密钥jscode（不绑定部分功能无法使用）<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 该写法只推荐在开发阶段，如果在生产阶段建议采用反向代理</span><br><span class="hljs-comment">// 官网说明https://lbs.amap.com/api/javascript-api/guide/abc/prepare</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">_AMapSecurityConfig</span> = &#123;<br>  <span class="hljs-attr">securityJsCode</span>: <span class="hljs-string">&#x27;jscode&#x27;</span> <span class="hljs-comment">// 输入你的jscode</span><br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li>封装组件<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;home_div&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">AMapLoader</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@amap/amap-jsapi-loader&#x27;</span>;</span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Mapview&quot;</span>,</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">map</span>: <span class="hljs-literal">null</span>,</span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">initAMap</span>();</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">initAMap</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">            <span class="hljs-title class_">AMapLoader</span>.<span class="hljs-title function_">load</span>(&#123;</span><br><span class="language-javascript">                <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;xxx&#x27;</span>,  <span class="hljs-comment">//设置您的key</span></span><br><span class="language-javascript">                <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;2.0&quot;</span>, <span class="hljs-comment">// 高德地图版本</span></span><br><span class="language-javascript">                <span class="hljs-attr">plugins</span>: [<span class="hljs-string">&#x27;AMap.ToolBar&#x27;</span>, <span class="hljs-string">&#x27;AMap.Driving&#x27;</span>], <span class="hljs-comment">// 插件</span></span><br><span class="language-javascript">                <span class="hljs-title class_">AMapUI</span>: &#123; <span class="hljs-comment">// 高德地图UI组件库，可不写，内部提供了覆盖物标注点，以及部分模块的封装</span></span><br><span class="language-javascript">                    <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;1.1&quot;</span>,</span><br><span class="language-javascript">                    <span class="hljs-attr">plugins</span>: [],</span><br><span class="language-javascript">                &#125;,</span><br><span class="language-javascript">                <span class="hljs-title class_">Loca</span>: &#123; <span class="hljs-comment">// Loca版本(高性能地图数据可视化库) 可不写</span></span><br><span class="language-javascript">                    <span class="hljs-attr">version</span>: <span class="hljs-string">&quot;2.0&quot;</span></span><br><span class="language-javascript">                &#125;,</span><br><span class="language-javascript">            &#125;).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">AMap</span>) =&gt;</span> &#123;</span><br><span class="language-javascript">                <span class="hljs-comment">// container渲染的id</span></span><br><span class="language-javascript">                <span class="hljs-variable language_">this</span>.<span class="hljs-property">map</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMap</span>.<span class="hljs-title class_">Map</span>(<span class="hljs-string">&quot;container&quot;</span>, &#123;</span><br><span class="language-javascript">                    <span class="hljs-attr">zoom</span>: <span class="hljs-number">5</span>, <span class="hljs-comment">// 当前缩放级别</span></span><br><span class="language-javascript">                    <span class="hljs-attr">zooms</span>: [<span class="hljs-number">2</span>, <span class="hljs-number">22</span>], <span class="hljs-comment">// 缩放级别范围</span></span><br><span class="language-javascript">                    <span class="hljs-attr">center</span>: [<span class="hljs-number">105.602725</span>, <span class="hljs-number">37.076636</span>], <span class="hljs-comment">// 中心点</span></span><br><span class="language-javascript">                &#125;);</span><br><span class="language-javascript">            &#125;).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> &#123;</span><br><span class="language-javascript">                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e);</span><br><span class="language-javascript">            &#125;)</span><br><span class="language-javascript">        &#125;,</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>  <span class="hljs-attr">scoped</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.home_div</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">&#125;</span><br><span class="language-css"><span class="hljs-selector-id">#container</span> &#123;</span><br><span class="language-css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    <span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="混合使用（vue-amap与原生API混合使用）"><a href="#混合使用（vue-amap与原生API混合使用）" class="headerlink" title="混合使用（vue-amap与原生API混合使用）"></a>混合使用（vue-amap与原生API混合使用）</h4><ul>
+<li><p>只想通过 <code>vue-amap </code>引入高德地图，而部分实例化的操作直接基于高德地图的 <code>sdk </code>完成</p>
+<blockquote>
+<p>实例化操作不是加载地图，简单来说就是用一些属性去实例化地图的这个类 <code>new xxx()</code> 代表的就是实例化<code>xxx</code>🛸。这样就不需要在使用<code>el-amap</code>中的<code>center</code>属性和<code>zoom</code>属性了🎨，因为已经通过原生的方式进行实例化了👜。</p>
+</blockquote>
+<figure class="highlight coffeescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coffeescript"><span class="hljs-keyword">import</span> &#123; lazyAMapApiLoaderInstance &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;<br>lazyAMapApiLoaderInstance.load().<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &#123;<br>  <span class="hljs-regexp">//</span> your code ...<br>  this.map = <span class="hljs-keyword">new</span> AMap.<span class="hljs-built_in">Map</span>(<span class="hljs-string">&#x27;amapContainer&#x27;</span>, &#123;<br>    center: <span class="hljs-keyword">new</span> AMap.LngLat(<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>)<br>  &#125;);<br>&#125;);<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>在<code>vue-amap</code>中引入高德原生<code>SDK</code>只需在<code>el-amap</code>上绑定<code>amap-manager</code>就可以拿到高德原生<code>AMap.Map</code>实例<a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/zh-cn/introduction/compatible">文档地址</a></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-page-container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">el-amap</span> <span class="hljs-attr">vid</span>=<span class="hljs-string">&quot;amapDemo&quot;</span> <span class="hljs-attr">:center</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">:amap-manager</span>=<span class="hljs-string">&quot;amapManager&quot;</span> <span class="hljs-attr">:zoom</span>=<span class="hljs-string">&quot;zoom&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;amap-demo&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">el-amap</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;add()&quot;</span>&gt;</span>add marker<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.amap-demo</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span> <span class="hljs-meta">!important</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-comment">// NPM 方式</span></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">AMapManager</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-amap&#x27;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">let</span> amapManager = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMapManager</span>();</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">data</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">zoom</span>: <span class="hljs-number">12</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">center</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.197646</span>],</span><br><span class="language-javascript">      amapManager,</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">add</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">let</span> o = amapManager.<span class="hljs-title function_">getMap</span>();</span><br><span class="language-javascript">      <span class="hljs-keyword">let</span> marker = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMap</span>.<span class="hljs-title class_">Marker</span>(&#123;</span><br><span class="language-javascript">        <span class="hljs-attr">position</span>: [<span class="hljs-number">121.59996</span>, <span class="hljs-number">31.177646</span>]</span><br><span class="language-javascript">      &#125;);</span><br><span class="language-javascript">      marker.<span class="hljs-title function_">setMap</span>(o);</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>网上针对高德地图的调用方案也有很多，我也是刚刚接触，文中的观点都是自身的看法，最后说一下自身对选型的判断🎑。</p>
+<ul>
+<li>如果是大屏类的项目，没有过多的交互只是简单扎点，展示建议使用<code>vue-amap</code>🤙🤙🤙。</li>
+<li>如果是已地图为中心的项目，包括人员路线，轨迹等等比较复杂的交互建议使用原生🤙🤙🤙。</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c721b629f48f4fdd90071c8751616844~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://lbs.amap.com/api/javascript-api/guide/abc/prepare">高德地图API</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://elemefe.github.io/vue-amap/#/">vue-amap</a></p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Vue/">Vue</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/17/Electron%E5%85%A5%E9%97%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Electron入门</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/17/echarts%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%B0%E5%9B%BE/">
+                        <span class="hidden-mobile">echarts自定义地图</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'drinkwd/drinkwd.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer" style="right: 0;"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/music.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>

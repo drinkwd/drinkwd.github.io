@@ -2,18 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://drinkwd.github.io/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/</loc>
+    <loc>https://drinkwd.github.io/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://drinkwd.github.io/2022/05/30/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>https://drinkwd.github.io/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
-    <lastmod>2022-05-30</lastmod>
+    <lastmod>2023-01-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/</loc>
+    
+    <lastmod>2023-01-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/</loc>
+    
+    <lastmod>2022-05-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,7 +265,7 @@
 
   <url>
     <loc>https://drinkwd.github.io/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -255,133 +273,140 @@
   
   <url>
     <loc>https://drinkwd.github.io/tags/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Electron/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Vue/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Nuxt3/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Echart/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/uni-app/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Nginx/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/React/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/IconFont/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Git/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/hexo/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/GitHub-Pages/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Fluid/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Vscode/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Chrom/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/NPM/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/NodeJS/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://drinkwd.github.io/tags/VUE/</loc>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Axios/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/tags/Python/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -390,21 +415,21 @@
   
   <url>
     <loc>https://drinkwd.github.io/categories/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://drinkwd.github.io/categories/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2022-05-31</lastmod>
+    <lastmod>2023-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
