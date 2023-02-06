@@ -8,7 +8,7 @@ banner_img: /img/blog_img/banner3.png
 
 ## 前言
 **为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在[博客](https://drinkwd.github.io/)中抢先看哦**🎈。
-## [vue-seamless-scroll](https://www.npmjs.com/package/timeago.js)
+## [vue-seamless-scroll](https://chenxuan0000.github.io/vue-seamless-scroll/zh/guide/usage.html)
 
 大家在做可视化大屏的时候应该遇到很多动画效果,这就少不了滚动的表格，如下。
 
