@@ -109,7 +109,7 @@ deploy:
 - type: git
   repo: https://gitee.com/drinkwd/drinkwd.git
   branch: master
-all_minifier: true
+all_minifier: false
 # sitemap
 sitemap:
   path: sitemap.xml

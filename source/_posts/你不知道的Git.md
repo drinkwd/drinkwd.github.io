@@ -199,6 +199,46 @@ commitizen init cz-customizable --save-dev --save-exact --force
 ```
 在项目根目录创建一个 [.cz-config.js](https://github.com/qiqihaobenben/commitizen-git/blob/master/.cz-config.js) 的文件这个文件的内容我们参照大佬写好的就行了
 关闭命令窗口再次打开输入git cz就会发现已经全部变成中文啦 大功告成🎨。
+
+### 生成 Change log
+如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成（[例子](https://github.com/btford/grunt-conventional-changelog/blob/master/CHANGELOG.md)）。
+
+生成的文档包括以下三个部分。
+
+> - New features
+> - Bug fixes
+> - Breaking changes
+
+每个部分都会罗列相关的 `commit` ，并且有指向这些 `commit` 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。
+
+[conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) 就是生成 `Change log` 的工具，运行下面的命令即可。
+
+```
+$ npm install -g conventional-changelog
+$ cd my-project
+$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0
+```
+上面的命令可以生成所有发布的 `Change log`。
+
+为了方便使用，可以将其写入`package.json`的`scripts`字段。
+```
+# 在命令行生成ChangeLog
+{
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+  }
+}
+# 将生成的内容写入文件
+{
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  }
+}
+```
+以后，直接运行下面的命令即可。
+```
+$ npm run changelog
+```
 ### 快速定位人员
 
 相信在开发代码的过程中可能会遇到这种如下情况（**夸张语法**）👇
