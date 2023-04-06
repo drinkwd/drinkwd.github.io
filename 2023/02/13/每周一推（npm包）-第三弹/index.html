@@ -1,1 +1,601 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="dark"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="drinkwd"><meta name="keywords" content="drinkwd"><meta name="description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。  这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。  circlr 通过滚动、鼠标和触摸事件进行动画旋转。"><meta property="og:type" content="article"><meta property="og:title" content="每周一推NPM包-第三弹"><meta property="og:url" content="https://drinkwd.github.io/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/index.html"><meta property="og:site_name" content="drinkwd的个人博客"><meta property="og:description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。  这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。  circlr 通过滚动、鼠标和触摸事件进行动画旋转。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index23.png"><meta property="article:published_time" content="2023-02-13T02:56:41.770Z"><meta property="article:modified_time" content="2023-03-10T06:00:10.614Z"><meta property="article:author" content="drinkwd"><meta property="article:tag" content="NPM"><meta property="article:tag" content="VUE"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index23.png"><title>每周一推NPM包-第三弹 - drinkwd的个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"drinkwd.github.io",root:"/",version:"1.8.14",typing:{enable:!0,typeSpeed:70,cursorChar:"",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!1,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:null,app_key:null,server_url:null,path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>drinkwd的博客</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/blog_img/banner3.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="每周一推NPM包-第三弹"></span><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> drinkwd </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2023-02-13 10:56" pubdate>2023年2月13日 上午</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 2.3k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 20 分钟 </span><span id="busuanzi_container_page_pv" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto"><h1 style="display:none">每周一推NPM包-第三弹</h1><div class="markdown-body"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在<a href="https://drinkwd.github.io/">博客</a>中抢先看哦</strong>🎈。</p><h2 id="circlr"><a href="#circlr" class="headerlink" title="circlr"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circlr">circlr</a></h2><p>我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7509ab8211134f8083d6c8e589f55aa3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p>这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。</p><blockquote><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circlr">circlr</a> 通过滚动、鼠标和触摸事件进行动画旋转。</p></blockquote><ul><li>水平或垂直方向</li><li>触摸事件支持</li><li>滚动支持</li><li>反向和循环旋转</li></ul><h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><p>我们在使用该组件时首先要获取到不同角度物品的照片，一般需要使用第三方的相机进行全景拍照，我们公司之前找到的厂商是<a target="_blank" rel="noopener" href="http://www.risd.com.cn/html/panoramicautomaticsystem/">特爱秀</a></p><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul><li>安装<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save circlr</span><br></code></pre></div></td></tr></table></figure></li><li>用法<figure class="highlight dart"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dart"><span class="hljs-keyword">import</span> circlr from <span class="hljs-string">&#x27;circlr&#x27;</span>;<br> <br><span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br> <br>circlr(el)<br>  .scroll(<span class="hljs-keyword">true</span>)<br>  .play()<br>  .<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, n =&gt; &#123;<br> <br>  &#125;);<br></code></pre></div></td></tr></table></figure></li></ul><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><ul><li><p><strong>html</strong></p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:340px&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item, index in imgList&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:340px;width:340px !important;&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;`http://www.risd.com.cn/pro/41/imgs/imgsForweb2/$&#123;index&#125;.jpg`&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li><li><p><strong>js</strong></p><figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">&lt;script&gt;<br><span class="hljs-keyword">import</span> circlr <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;circlr&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ImgCirclr&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">msg</span>: <span class="hljs-title class_">String</span><br>  &#125;,<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">imgList</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">40</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;<br>  &#125;,<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br>      <span class="hljs-title function_">circlr</span>(el)<br>        .<span class="hljs-title function_">scroll</span>(<span class="hljs-literal">true</span>)<br>        .<span class="hljs-title function_">play</span>()<br>        .<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> &#123;<br>        &#125;);<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure></li><li><p><strong>style</strong></p><figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-tag">img</span>&#123;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">340px</span> <span class="hljs-meta">!important</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">340px</span> <span class="hljs-meta">!important</span>;<br>&#125;<br>&lt;/style&gt;<br></code></pre></div></td></tr></table></figure><p>这样就实现了物品的360度展示，并支持鼠标滚轮根据方向启停🎉。</p><h4 id="动态停止，启动"><a href="#动态停止，启动" class="headerlink" title="动态停止，启动"></a>动态停止，启动</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">&lt;script&gt;<br><span class="hljs-keyword">import</span> circlr <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;circlr&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ImgCirclr&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">msg</span>: <span class="hljs-title class_">String</span><br>  &#125;,<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">imgList</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">40</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>      <span class="hljs-attr">circlrInstance</span>: <span class="hljs-literal">null</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br>    <span class="hljs-comment">// 将circlr赋值给vue中的data</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span> = <span class="hljs-title function_">circlr</span>(el)<br>      .<span class="hljs-title function_">scroll</span>(<span class="hljs-literal">true</span>)<br>      .<span class="hljs-title function_">play</span>()<br>      .<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> &#123;<br>      &#125;);<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-comment">// 停止旋转</span><br>    <span class="hljs-title function_">stopCirclr</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span>.<span class="hljs-title function_">stop</span>()<br>    &#125;,<br>    <span class="hljs-comment">// 开始旋转</span><br>    <span class="hljs-title function_">startCirclr</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span>.<span class="hljs-title function_">play</span>()<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure></li></ul><h4 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h4><ul><li>circlr(el) el代表dom实例<br>创建旋转实例</li><li>scroll(n) n代表true/false<br>通过滚动标志旋转</li><li>play([n]) 开始序列播放</li><li>stop 停止播放</li><li>interval(ms) 旋转间隔时间</li></ul><p>效果如下👇</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/edd36b394c36443da5ed6506f83e2e57~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><blockquote><ul><li>获取dom的时候如果出现获取不到的时候需要通过使用nextTick进行获取</li><li>动态启停的时候要将初始的实例进行赋值，如果不使用初始值的话，停止或者启动的时候会从初始位置进行旋转</li></ul></blockquote><h2 id="往期NPM包"><a href="#往期NPM包" class="headerlink" title="往期NPM包"></a>往期NPM包</h2><h5 id="timeago-js"><a href="#timeago-js" class="headerlink" title="timeago.js"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7194637751516414011">timeago.js</a></h5><h5 id="vue-seamless-scroll"><a href="#vue-seamless-scroll" class="headerlink" title="vue-seamless-scroll"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7196907025099653176">vue-seamless-scroll</a></h5><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>circlr</code>我们在做物品展示的时候是非常重要的，可以多角度控制物品的展示，使用方法也比较简单，希望对大家有所帮助🎈。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1d5ab6f1c77440b59862d91857f3cb74~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/NPM/">NPM</a> <a class="hover-with-bg" href="/tags/VUE/">VUE</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！谢谢</p><div class="post-prevnext"><article class="post-prev col-6"><a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">每周一推NPM包-第四弹</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/"><span class="hidden-mobile">每周一推NPM包-第二弹</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments" lazyload><script type="text/javascript">Fluid.utils.loadComments("#comments",(function(){var t=document.documentElement.getAttribute("data-user-color-scheme");t="dark"===t?"github-dark":"github-light",window.UtterancesThemeLight="github-light",window.UtterancesThemeDark="github-dark";var e=document.createElement("script");e.setAttribute("src","https://utteranc.es/client.js"),e.setAttribute("repo","drinkwd/drinkwd.github.io"),e.setAttribute("issue-term","title"),e.setAttribute("label","utterances"),e.setAttribute("theme",t),e.setAttribute("crossorigin","anonymous"),document.getElementById("comments").appendChild(e)}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div class="toc-body" id="toc-body"></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div></footer><script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js"></script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/live2d-widget/autoload.js"></script><script src="/js/boot.js"></script><div id="aplayer" style="right:0"></div><link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script defer src="/js/music.js"></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="drinkwd">
+  <meta name="keywords" content="drinkwd">
+  
+    <meta name="description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。  这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。  circlr 通过滚动、鼠标和触摸事件进行动画旋转。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每周一推NPM包-第三弹">
+<meta property="og:url" content="https://drinkwd.github.io/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/index.html">
+<meta property="og:site_name" content="drinkwd的个人博客">
+<meta property="og:description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。  这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。  circlr 通过滚动、鼠标和触摸事件进行动画旋转。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index23.png">
+<meta property="article:published_time" content="2023-02-13T02:56:41.770Z">
+<meta property="article:modified_time" content="2023-03-10T06:00:10.614Z">
+<meta property="article:author" content="drinkwd">
+<meta property="article:tag" content="NPM">
+<meta property="article:tag" content="VUE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index23.png">
+  
+  
+  <title>每周一推NPM包-第三弹 - drinkwd的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>drinkwd的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/blog_img/banner3.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="每周一推NPM包-第三弹">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      drinkwd
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-02-13 10:56" pubdate>
+        2023年2月13日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">每周一推NPM包-第三弹</h1>
+            
+            <div class="markdown-body">
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在<a href="https://drinkwd.github.io/">博客</a>中抢先看哦</strong>🎈。</p>
+<h2 id="circlr"><a href="#circlr" class="headerlink" title="circlr"></a><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circlr">circlr</a></h2><p>我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7509ab8211134f8083d6c8e589f55aa3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p>这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/circlr">circlr</a> 通过滚动、鼠标和触摸事件进行动画旋转。</p>
+</blockquote>
+<ul>
+<li>水平或垂直方向</li>
+<li>触摸事件支持</li>
+<li>滚动支持</li>
+<li>反向和循环旋转</li>
+</ul>
+<h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><p>我们在使用该组件时首先要获取到不同角度物品的照片，一般需要使用第三方的相机进行全景拍照，我们公司之前找到的厂商是<a target="_blank" rel="noopener" href="http://www.risd.com.cn/html/panoramicautomaticsystem/">特爱秀</a></p>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
+<li>安装<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save circlr</span><br></code></pre></div></td></tr></table></figure></li>
+<li>用法<figure class="highlight dart"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dart"><span class="hljs-keyword">import</span> circlr from <span class="hljs-string">&#x27;circlr&#x27;</span>;<br> <br><span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br> <br>circlr(el)<br>  .scroll(<span class="hljs-keyword">true</span>)<br>  .play()<br>  .<span class="hljs-keyword">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, n =&gt; &#123;<br> <br>  &#125;);<br></code></pre></div></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><ul>
+<li><p><strong>html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:340px&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;item, index in imgList&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height:340px;width:340px !important;&quot;</span></span><br><span class="hljs-tag">        <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;`http://www.risd.com.cn/pro/41/imgs/imgsForweb2/$&#123;index&#125;.jpg`&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p><strong>js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js">&lt;script&gt;<br><span class="hljs-keyword">import</span> circlr <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;circlr&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ImgCirclr&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">msg</span>: <span class="hljs-title class_">String</span><br>  &#125;,<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">imgList</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">40</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-string">&#x27;&#x27;</span>)<br>    &#125;<br>  &#125;,<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br>      <span class="hljs-title function_">circlr</span>(el)<br>        .<span class="hljs-title function_">scroll</span>(<span class="hljs-literal">true</span>)<br>        .<span class="hljs-title function_">play</span>()<br>        .<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> &#123;<br>        &#125;);<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p><strong>style</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css">&lt;style&gt;<br><span class="hljs-selector-tag">img</span>&#123;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">340px</span> <span class="hljs-meta">!important</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">340px</span> <span class="hljs-meta">!important</span>;<br>&#125;<br>&lt;/style&gt;<br></code></pre></div></td></tr></table></figure>
+<p>这样就实现了物品的360度展示，并支持鼠标滚轮根据方向启停🎉。</p>
+<h4 id="动态停止，启动"><a href="#动态停止，启动" class="headerlink" title="动态停止，启动"></a>动态停止，启动</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">&lt;script&gt;<br><span class="hljs-keyword">import</span> circlr <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;circlr&#x27;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;ImgCirclr&#x27;</span>,<br>  <span class="hljs-attr">props</span>: &#123;<br>    <span class="hljs-attr">msg</span>: <span class="hljs-title class_">String</span><br>  &#125;,<br>  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> &#123;<br>      <span class="hljs-attr">imgList</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Array</span>(<span class="hljs-number">40</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-string">&#x27;&#x27;</span>),<br>      <span class="hljs-attr">circlrInstance</span>: <span class="hljs-literal">null</span><br>    &#125;<br>  &#125;,<br>  <span class="hljs-title function_">mounted</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> el = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.container&#x27;</span>);<br>    <span class="hljs-comment">// 将circlr赋值给vue中的data</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span> = <span class="hljs-title function_">circlr</span>(el)<br>      .<span class="hljs-title function_">scroll</span>(<span class="hljs-literal">true</span>)<br>      .<span class="hljs-title function_">play</span>()<br>      .<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;show&#x27;</span>, <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> &#123;<br>      &#125;);<br>  &#125;,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-comment">// 停止旋转</span><br>    <span class="hljs-title function_">stopCirclr</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span>.<span class="hljs-title function_">stop</span>()<br>    &#125;,<br>    <span class="hljs-comment">// 开始旋转</span><br>    <span class="hljs-title function_">startCirclr</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">circlrInstance</span>.<span class="hljs-title function_">play</span>()<br>    &#125;<br>  &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h4 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h4><ul>
+<li>circlr(el) el代表dom实例<br>创建旋转实例</li>
+<li>scroll(n) n代表true/false<br>通过滚动标志旋转</li>
+<li>play([n]) 开始序列播放</li>
+<li>stop 停止播放</li>
+<li>interval(ms) 旋转间隔时间</li>
+</ul>
+<p>效果如下👇</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/edd36b394c36443da5ed6506f83e2e57~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><blockquote>
+<ul>
+<li>获取dom的时候如果出现获取不到的时候需要通过使用nextTick进行获取</li>
+<li>动态启停的时候要将初始的实例进行赋值，如果不使用初始值的话，停止或者启动的时候会从初始位置进行旋转</li>
+</ul>
+</blockquote>
+<h2 id="往期NPM包"><a href="#往期NPM包" class="headerlink" title="往期NPM包"></a>往期NPM包</h2><h5 id="timeago-js"><a href="#timeago-js" class="headerlink" title="timeago.js"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7194637751516414011">timeago.js</a></h5><h5 id="vue-seamless-scroll"><a href="#vue-seamless-scroll" class="headerlink" title="vue-seamless-scroll"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7196907025099653176">vue-seamless-scroll</a></h5><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>circlr</code>我们在做物品展示的时候是非常重要的，可以多角度控制物品的展示，使用方法也比较简单，希望对大家有所帮助🎈。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1d5ab6f1c77440b59862d91857f3cb74~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/NPM/">NPM</a>
+                    
+                      <a class="hover-with-bg" href="/tags/VUE/">VUE</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">每周一推NPM包-第四弹</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/">
+                        <span class="hidden-mobile">每周一推NPM包-第二弹</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'drinkwd/drinkwd.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer" style="right: 0;"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/music.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>

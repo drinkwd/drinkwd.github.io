@@ -1,1 +1,631 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="dark"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="drinkwd"><meta name="keywords" content="drinkwd"><meta name="description" content="🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.v"><meta property="og:type" content="article"><meta property="og:title" content="效率翻倍小技巧"><meta property="og:url" content="https://drinkwd.github.io/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html"><meta property="og:site_name" content="drinkwd的个人博客"><meta property="og:description" content="🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.v"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index21.png"><meta property="article:published_time" content="2023-01-29T01:09:09.000Z"><meta property="article:modified_time" content="2023-01-31T02:59:43.014Z"><meta property="article:author" content="drinkwd"><meta property="article:tag" content="Vue"><meta property="article:tag" content="Vscode"><meta property="article:tag" content="Chrom"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index21.png"><title>效率翻倍小技巧 - drinkwd的个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"drinkwd.github.io",root:"/",version:"1.8.14",typing:{enable:!0,typeSpeed:70,cursorChar:"",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!1,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:null,app_key:null,server_url:null,path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>drinkwd的博客</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/blog_img/banner21.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="效率翻倍小技巧"></span><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> drinkwd </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2023-01-29 09:09" pubdate>2023年1月29日 上午</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 2.3k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 20 分钟 </span><span id="busuanzi_container_page_pv" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto"><h1 style="display:none">效率翻倍小技巧</h1><div class="markdown-body"><h2 id="🎨前言"><a href="#🎨前言" class="headerlink" title="🎨前言"></a>🎨前言</h2><p>工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙</p><h2 id="markdown-自动生成目录结构"><a href="#markdown-自动生成目录结构" class="headerlink" title="markdown 自动生成目录结构"></a>markdown 自动生成目录结构</h2><p>当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。</p><figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp">├── app.vue <span class="hljs-meta"># Nuxt 3 应用程序中的主组件 入口组件</span><br>├── components <span class="hljs-meta"># 组件目录，支持自动导入</span><br>|  └── helloWorld.vue <span class="hljs-meta"># 组件</span><br>├── nuxt.config.ts <span class="hljs-meta"># Nuxt 配置文件，文件名必须是nuxt.config 后缀名可以是.js,.ts或.mjs</span><br>├── package.json <span class="hljs-meta"># 项目包的配置文件和项目的启动调式命令配置</span><br>├── README.md <span class="hljs-meta"># 搭建 Nuxt 3脚手架之后的阅读文档</span><br>├── tsconfig.json <span class="hljs-meta"># ts配置</span><br>└── yarn.<span class="hljs-keyword">lock</span> <span class="hljs-meta"># yarn锁文件 锁定依赖包版本</span><br></code></pre></div></td></tr></table></figure><p>直到我发现了<code>windows</code>自带的<code>tree</code>命令。</p><ul><li><strong><code>tree</code></strong> 使用方法</li></ul><p>在需要生成目录的文件夹中输入<code>tree</code>将输出的内容复制出来即可👇。</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/877946a2e93944fbbb4388612fa51444~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><blockquote><p>上面的内容看起来不错，但是<code>tree</code>命令没有提供可忽略的选项🍖定在生成你目录结构的时候不想要<code>node_modules</code>,<code>.git</code>等等，于是我们需要用到<code>tree-cli</code>指令👍</p></blockquote><ul><li><strong><code>tree-cli</code></strong> 安装</li></ul><figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm">npm install tree-<span class="hljs-keyword">cli</span><br></code></pre></div></td></tr></table></figure><blockquote><p>需要注意一点，如果是<code>windows</code>系统的话要使用<code>treee</code>避免与<code>windows</code>系统自带的<code>tree</code>产生冲突🦺</p></blockquote><ul><li><p>输出指定层级目录</p><figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-comment"># -l 层级深度，-o 输出文件</span><br><span class="hljs-attribute">treee</span> -l <span class="hljs-number">2</span> -o output.txt<br></code></pre></div></td></tr></table></figure></li><li><p>输出目录不包含指定文件</p><figure class="highlight stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stylus">treee -l <span class="hljs-number">5</span> -o output<span class="hljs-selector-class">.txt</span> <span class="hljs-attr">--ignore</span> <span class="hljs-string">&#x27;node_modules,.git&#x27;</span><br></code></pre></div></td></tr></table></figure></li><li><p>在markdown中使用</p></li></ul><p>在使用的时候需要用代码块包裹才可以正常显示哦,以后妈妈再也不用担心我的博客中缺少目录结构了✌。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cfc898c953804251ae912a9fc9a3f9ab~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h3 id="生成代码片段"><a href="#生成代码片段" class="headerlink" title="生成代码片段"></a>生成代码片段</h3><p>当我们在使用<code>vscode</code>编程的时候在写<code>vue</code>程序的时候避免不了要用到以下模板</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3763292058a44aed8040eec47aae8c48~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>但是🥠身份程序员每次多打一个字我们都会觉得累想一下我们在写<code>html</code>文件的时候为什么写一个<strong>html:5</strong> 的时候就会自动生成一个模板呢😘</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4710151addc4be9a8deabad8147267e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p>实际上上面的过程就是一个代码片段，接下来我们就需要实现一个<code>vue</code>的代码片段。</p><h4 id="vue代码片段"><a href="#vue代码片段" class="headerlink" title="vue代码片段"></a><code>vue</code>代码片段</h4><ul><li>打开<code>vscode</code>设置小齿轮找到用户代码片段</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56974a1084e34e54b9770a60c4af603d~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>点击用户代码片段，在弹出的框中选择新代码片段，填入名称可以随意填写，点击<code>enter</code></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7331cd95289401b9a1e3710254b647e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2e44c736e3c446c91af2c5a2225451f~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/755e2a39e0ff4602997558d1c5d109a0~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>编写代码片段模板，保存即可。<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json"><span class="hljs-comment">// Example: </span><br><span class="hljs-comment">// &quot;vue&quot;: &#123;</span><br><span class="hljs-comment">// 	&quot;scope&quot;: &quot;javascript,typescript&quot;, 指定文件类型</span><br><span class="hljs-comment">// 	&quot;prefix&quot;: &quot;log&quot;, //输入前缀</span><br><span class="hljs-comment">// 	&quot;body&quot;: [ // 模板内容</span><br><span class="hljs-comment">// 		&quot;console.log(&#x27;$1&#x27;);&quot;,</span><br><span class="hljs-comment">// 		&quot;$2&quot;</span><br><span class="hljs-comment">// 	],</span><br><span class="hljs-comment">// 	&quot;description&quot;: &quot;Log output to console&quot; // 描述</span><br><span class="hljs-comment">// &#125;</span><br><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;vue&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;vue&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><br>        <span class="hljs-string">&quot;&lt;template&gt;&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-string">&quot;  &lt;div class=\&quot;\&quot;&gt;&lt;/div&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;/template&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;script&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;export default &#123;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;/script&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;style scoped&gt;&lt;/style&gt;&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;vue Components&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></div></td></tr></table></figure></li><li>当我们载输入<code>vue</code>的时候就会自动生成模板啦。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e1cd76cda1e4b0288561b5587f33467~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></li></ul><h3 id="快速定位人员"><a href="#快速定位人员" class="headerlink" title="快速定位人员"></a>快速定位人员</h3><p>相信在开发代码的过程中可能会遇到这种如下情况（<strong>夸张语法</strong>）👇</p><ul><li><strong>领导</strong>🤦‍♂️：这块代码究竟是谁写的代码，让公司赚了<code>50W</code>。</li><li><strong>小王</strong>🤷‍：我写的。</li><li><strong>小李</strong>🤷‍:好像是我写的吧，有点记不住了。</li><li><strong>小张</strong>🤷‍：我也忘了是不是我写的了我看一下<code>git</code>代码的提交记录吧。<br></li></ul><p>当我们遇到这种问题的时候，如果是去<code>git</code>上一点一点去查提交记录的话未免有点太浪费时间🤷‍♂️费了这次表扬的机会，包括如果有问题的话也可以找到对应的人👩‍🔧</p><ul><li><strong>gitlens</strong>安装</li></ul><p>在<code>vscode</code>拓展商店中找到<code>gitlens</code>安装。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d9dda1eaa19f4d73b04271ddcc1977c3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>查看方式<br>当我们的项目如果有<code>.git</code>文件的时候就自动解析出提交人的姓名,哪一行代码是谁在什么时间点提交的。</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/59e80b22ea21409f8baa04fa853d52d8~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h3 id="快速查看git源码"><a href="#快速查看git源码" class="headerlink" title="快速查看git源码"></a>快速查看git源码</h3><p>当我们在浏览git项目的时候如果目录层级特别深的时候我们一层一层的去点击真的是很烦😒别耽误我们的时间，如果能在左侧有一个纵向的目录结构就好了😜</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/176e72daed7f47b89442fcd00ae6bfac~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li>安装<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/search/Octotree?utm_source=chrome-ntp-icon">Octotree</a>插件,添加到谷歌浏览器扩展当中。</li></ul><blockquote><p>如果无法访问Google可以自行找一下已解压的扩展程序，如果没有找到的话可以评论找我要哦😁</p></blockquote><ul><li>重启谷歌浏览器，就会看到树状的项目可以快速浏览项目啦。</li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/57cdd36289b24a6899c369b47dfaefae~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在工作的时候效率肯定是第一位，最短的时候干最多的事，才是赚钱利器🎨</p></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/">代码人生</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/Vue/">Vue</a> <a class="hover-with-bg" href="/tags/Vscode/">Vscode</a> <a class="hover-with-bg" href="/tags/Chrom/">Chrom</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！谢谢</p><div class="post-prevnext"><article class="post-prev col-6"><a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">每周一推NPM包</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/"><span class="hidden-mobile">Nuxt3目录结构(二)</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments" lazyload><script type="text/javascript">Fluid.utils.loadComments("#comments",(function(){var t=document.documentElement.getAttribute("data-user-color-scheme");t="dark"===t?"github-dark":"github-light",window.UtterancesThemeLight="github-light",window.UtterancesThemeDark="github-dark";var e=document.createElement("script");e.setAttribute("src","https://utteranc.es/client.js"),e.setAttribute("repo","drinkwd/drinkwd.github.io"),e.setAttribute("issue-term","title"),e.setAttribute("label","utterances"),e.setAttribute("theme",t),e.setAttribute("crossorigin","anonymous"),document.getElementById("comments").appendChild(e)}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div class="toc-body" id="toc-body"></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div></footer><script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js"></script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/live2d-widget/autoload.js"></script><script src="/js/boot.js"></script><div id="aplayer" style="right:0"></div><link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script defer src="/js/music.js"></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="drinkwd">
+  <meta name="keywords" content="drinkwd">
+  
+    <meta name="description" content="🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="效率翻倍小技巧">
+<meta property="og:url" content="https://drinkwd.github.io/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="drinkwd的个人博客">
+<meta property="og:description" content="🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.v">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index21.png">
+<meta property="article:published_time" content="2023-01-29T01:09:09.000Z">
+<meta property="article:modified_time" content="2023-01-31T02:59:43.014Z">
+<meta property="article:author" content="drinkwd">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Vscode">
+<meta property="article:tag" content="Chrom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index21.png">
+  
+  
+  <title>效率翻倍小技巧 - drinkwd的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>drinkwd的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/blog_img/banner21.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="效率翻倍小技巧">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      drinkwd
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-01-29 09:09" pubdate>
+        2023年1月29日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">效率翻倍小技巧</h1>
+            
+            <div class="markdown-body">
+              <h2 id="🎨前言"><a href="#🎨前言" class="headerlink" title="🎨前言"></a>🎨前言</h2><p>工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙</p>
+<h2 id="markdown-自动生成目录结构"><a href="#markdown-自动生成目录结构" class="headerlink" title="markdown 自动生成目录结构"></a>markdown 自动生成目录结构</h2><p>当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs csharp">├── app.vue <span class="hljs-meta"># Nuxt 3 应用程序中的主组件 入口组件</span><br>├── components <span class="hljs-meta"># 组件目录，支持自动导入</span><br>|  └── helloWorld.vue <span class="hljs-meta"># 组件</span><br>├── nuxt.config.ts <span class="hljs-meta"># Nuxt 配置文件，文件名必须是nuxt.config 后缀名可以是.js,.ts或.mjs</span><br>├── package.json <span class="hljs-meta"># 项目包的配置文件和项目的启动调式命令配置</span><br>├── README.md <span class="hljs-meta"># 搭建 Nuxt 3脚手架之后的阅读文档</span><br>├── tsconfig.json <span class="hljs-meta"># ts配置</span><br>└── yarn.<span class="hljs-keyword">lock</span> <span class="hljs-meta"># yarn锁文件 锁定依赖包版本</span><br></code></pre></div></td></tr></table></figure>
+
+<p>直到我发现了<code>windows</code>自带的<code>tree</code>命令。</p>
+<ul>
+<li><strong><code>tree</code></strong> 使用方法</li>
+</ul>
+<p>在需要生成目录的文件夹中输入<code>tree</code>将输出的内容复制出来即可👇。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/877946a2e93944fbbb4388612fa51444~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>上面的内容看起来不错，但是<code>tree</code>命令没有提供可忽略的选项🍖定在生成你目录结构的时候不想要<code>node_modules</code>,<code>.git</code>等等，于是我们需要用到<code>tree-cli</code>指令👍</p>
+</blockquote>
+<ul>
+<li><strong><code>tree-cli</code></strong> 安装</li>
+</ul>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm">npm install tree-<span class="hljs-keyword">cli</span><br></code></pre></div></td></tr></table></figure>
+<blockquote>
+<p>需要注意一点，如果是<code>windows</code>系统的话要使用<code>treee</code>避免与<code>windows</code>系统自带的<code>tree</code>产生冲突🦺</p>
+</blockquote>
+<ul>
+<li><p>输出指定层级目录</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-comment"># -l 层级深度，-o 输出文件</span><br><span class="hljs-attribute">treee</span> -l <span class="hljs-number">2</span> -o output.txt<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>输出目录不包含指定文件</p>
+<figure class="highlight stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stylus">treee -l <span class="hljs-number">5</span> -o output<span class="hljs-selector-class">.txt</span> <span class="hljs-attr">--ignore</span> <span class="hljs-string">&#x27;node_modules,.git&#x27;</span><br></code></pre></div></td></tr></table></figure></li>
+<li><p>在markdown中使用</p>
+</li>
+</ul>
+<p>在使用的时候需要用代码块包裹才可以正常显示哦,以后妈妈再也不用担心我的博客中缺少目录结构了✌。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cfc898c953804251ae912a9fc9a3f9ab~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h3 id="生成代码片段"><a href="#生成代码片段" class="headerlink" title="生成代码片段"></a>生成代码片段</h3><p>当我们在使用<code>vscode</code>编程的时候在写<code>vue</code>程序的时候避免不了要用到以下模板</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3763292058a44aed8040eec47aae8c48~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload><br>但是🥠身份程序员每次多打一个字我们都会觉得累想一下我们在写<code>html</code>文件的时候为什么写一个<strong>html:5</strong> 的时候就会自动生成一个模板呢😘</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4710151addc4be9a8deabad8147267e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p>实际上上面的过程就是一个代码片段，接下来我们就需要实现一个<code>vue</code>的代码片段。</p>
+<h4 id="vue代码片段"><a href="#vue代码片段" class="headerlink" title="vue代码片段"></a><code>vue</code>代码片段</h4><ul>
+<li>打开<code>vscode</code>设置小齿轮找到用户代码片段</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/56974a1084e34e54b9770a60c4af603d~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>点击用户代码片段，在弹出的框中选择新代码片段，填入名称可以随意填写，点击<code>enter</code></li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7331cd95289401b9a1e3710254b647e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2e44c736e3c446c91af2c5a2225451f~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/755e2a39e0ff4602997558d1c5d109a0~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>编写代码片段模板，保存即可。<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json"><span class="hljs-comment">// Example: </span><br><span class="hljs-comment">// &quot;vue&quot;: &#123;</span><br><span class="hljs-comment">// 	&quot;scope&quot;: &quot;javascript,typescript&quot;, 指定文件类型</span><br><span class="hljs-comment">// 	&quot;prefix&quot;: &quot;log&quot;, //输入前缀</span><br><span class="hljs-comment">// 	&quot;body&quot;: [ // 模板内容</span><br><span class="hljs-comment">// 		&quot;console.log(&#x27;$1&#x27;);&quot;,</span><br><span class="hljs-comment">// 		&quot;$2&quot;</span><br><span class="hljs-comment">// 	],</span><br><span class="hljs-comment">// 	&quot;description&quot;: &quot;Log output to console&quot; // 描述</span><br><span class="hljs-comment">// &#125;</span><br><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;vue&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;prefix&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;vue&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;body&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><br>        <span class="hljs-string">&quot;&lt;template&gt;&quot;</span><span class="hljs-punctuation">,</span><br>            <span class="hljs-string">&quot;  &lt;div class=\&quot;\&quot;&gt;&lt;/div&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;/template&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;script&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;export default &#123;&#125;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;/script&gt;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-string">&quot;&lt;style scoped&gt;&lt;/style&gt;&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;vue Components&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></div></td></tr></table></figure></li>
+<li>当我们载输入<code>vue</code>的时候就会自动生成模板啦。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7e1cd76cda1e4b0288561b5587f33467~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></li>
+</ul>
+<h3 id="快速定位人员"><a href="#快速定位人员" class="headerlink" title="快速定位人员"></a>快速定位人员</h3><p>相信在开发代码的过程中可能会遇到这种如下情况（<strong>夸张语法</strong>）👇</p>
+<ul>
+<li><strong>领导</strong>🤦‍♂️：这块代码究竟是谁写的代码，让公司赚了<code>50W</code>。</li>
+<li><strong>小王</strong>🤷‍：我写的。</li>
+<li><strong>小李</strong>🤷‍:好像是我写的吧，有点记不住了。</li>
+<li><strong>小张</strong>🤷‍：我也忘了是不是我写的了我看一下<code>git</code>代码的提交记录吧。<br></li>
+</ul>
+<p>当我们遇到这种问题的时候，如果是去<code>git</code>上一点一点去查提交记录的话未免有点太浪费时间🤷‍♂️费了这次表扬的机会，包括如果有问题的话也可以找到对应的人👩‍🔧</p>
+<ul>
+<li><strong>gitlens</strong>安装</li>
+</ul>
+<p>在<code>vscode</code>拓展商店中找到<code>gitlens</code>安装。<br><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d9dda1eaa19f4d73b04271ddcc1977c3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>查看方式<br>当我们的项目如果有<code>.git</code>文件的时候就自动解析出提交人的姓名,哪一行代码是谁在什么时间点提交的。</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/59e80b22ea21409f8baa04fa853d52d8~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h3 id="快速查看git源码"><a href="#快速查看git源码" class="headerlink" title="快速查看git源码"></a>快速查看git源码</h3><p>当我们在浏览git项目的时候如果目录层级特别深的时候我们一层一层的去点击真的是很烦😒别耽误我们的时间，如果能在左侧有一个纵向的目录结构就好了😜</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/176e72daed7f47b89442fcd00ae6bfac~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>安装<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/search/Octotree?utm_source=chrome-ntp-icon">Octotree</a>插件,添加到谷歌浏览器扩展当中。</li>
+</ul>
+<blockquote>
+<p>如果无法访问Google可以自行找一下已解压的扩展程序，如果没有找到的话可以评论找我要哦😁</p>
+</blockquote>
+<ul>
+<li>重启谷歌浏览器，就会看到树状的项目可以快速浏览项目啦。</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/57cdd36289b24a6899c369b47dfaefae~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在工作的时候效率肯定是第一位，最短的时候干最多的事，才是赚钱利器🎨</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/">代码人生</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Vue/">Vue</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Vscode/">Vscode</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Chrom/">Chrom</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">每周一推NPM包</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/">
+                        <span class="hidden-mobile">Nuxt3目录结构(二)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'drinkwd/drinkwd.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer" style="right: 0;"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/music.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>

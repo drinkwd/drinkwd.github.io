@@ -1,1 +1,927 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="dark"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="drinkwd"><meta name="keywords" content="drinkwd"><meta name="description" content="一个你来了，就走不出去的前端博客"><meta property="og:type" content="website"><meta property="og:title" content="drinkwd的个人博客"><meta property="og:url" content="https://drinkwd.github.io/index.html"><meta property="og:site_name" content="drinkwd的个人博客"><meta property="og:description" content="一个你来了，就走不出去的前端博客"><meta property="og:locale" content="zh_CN"><meta property="article:author" content="drinkwd"><meta property="article:tag" content="drinkwd"><meta name="twitter:card" content="summary_large_image"><title>drinkwd的个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"drinkwd.github.io",root:"/",version:"1.8.14",typing:{enable:!0,typeSpeed:70,cursorChar:"",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!1,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:null,app_key:null,server_url:null,path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><header style="height:100vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>drinkwd的博客</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/default.jpg) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="我曾踏足山巅，也曾进入低谷，二者都让我受益良多"></span></div><div class="scroll-down-bar"><i class="iconfont icon-arrowdown"></i></div></div></div></div></header><main><div class="container nopadding-x-md"><div class="py-5" id="board" style="margin-top:0"><div class="container"><div class="row"><div class="col-12 col-md-10 m-auto"><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self"><img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第五弹"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self">每周一推NPM包-第五弹</a></h1><p class="index-excerpt"><a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self">前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家🎈。 NProgress大家在查看vue-element-admin或者某些相关文档的时候部分网站都会有浏览器加载进度条，接下来我们就用插件来实现它。👇 用法 安装 1npm install --save nprogress 引用 12import NProgress from &amp;#x27;nprogre</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-04-04 08:42" pubdate>2023-04-04</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/NPM/">NPM</a> <a href="/tags/VUE/">VUE</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self"><img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第四弹"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self">每周一推NPM包-第四弹</a></h1><p class="index-excerpt"><a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self">前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-03-10 13:59" pubdate>2023-03-10</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/NPM/">NPM</a> <a href="/tags/VUE/">VUE</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self"><img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第三弹"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self">每周一推NPM包-第三弹</a></h1><p class="index-excerpt"><a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self">前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。 这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。 circlr 通过滚动、鼠标和触摸事件进行动画旋转。</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-02-13 10:56" pubdate>2023-02-13</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/NPM/">NPM</a> <a href="/tags/VUE/">VUE</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self"><img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第二弹"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self">每周一推NPM包-第二弹</a></h1><p class="index-excerpt"><a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self">前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 vue-seamless-scroll大家在做可视化大屏的时候应该遇到很多动画效果,这就少不了滚动的表格，如下。 我们当然可以去改变dom的scrollTop去实现，但是有了这款插件之后包裹对应要滚动的dom就可以了，并且还提供了很多的api让的大</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-02-06 14:41" pubdate>2023-02-06</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/NPM/">NPM</a> <a href="/tags/VUE/">VUE</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self"><img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self">每周一推NPM包</a></h1><p class="index-excerpt"><a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self">前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家🎈。 timeago.js相信大家都看到过这种时间的展示,或者是朋友圈发了一条动态后，左下角显示 “刚刚”，过一会儿变成了“x分钟前”👇如果我们通过自己实现怕不是比较麻烦,但是有了timeago.js之后就变的简单起来。 timeago.js 是一个 nano 库（小于 2 kb），用于使用 *** t</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-01-31 10:53" pubdate>2023-01-31</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/NPM/">NPM</a> <a href="/tags/VUE/">VUE</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self"><img src="/img/blog_img/index21.png" srcset="/img/loading.gif" lazyload alt="效率翻倍小技巧"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">效率翻倍小技巧</a></h1><p class="index-excerpt"><a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入| └── helloWorld.v</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-01-29 09:09" pubdate>2023-01-29</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/">代码人生</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Vue/">Vue</a> <a href="/tags/Vscode/">Vscode</a> <a href="/tags/Chrom/">Chrom</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self"><img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="Nuxt3目录结构(二)"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">Nuxt3目录结构(二)</a></h1><p class="index-excerpt"><a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">前言书接上回 nuxt约定的目录结构如下👇123456789101112131415├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入├── layouts # 布局目录├── composables # 公共函数，支持自动导入├── assets # 静态资源目录 与vue项目的assets相同├── middlew</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2023-01-09 14:58" pubdate>2023-01-09</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Vue/">Vue</a> <a href="/tags/Nuxt3/">Nuxt3</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self"><img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="Nuxt3目录结构(一)"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self">Nuxt3目录结构(一)</a></h1><p class="index-excerpt"><a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self">前言🥠因为Nuxt是约定大于配置的一个框架，所对应的目录结构的名称基本都是规定的，所以有必要解释一下Nuxt对应的目录结构啦🦺 脚手架生成目录结构👇12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入| └── helloWorld.vue # 组件├── nuxt.config.ts # Nuxt</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2022-05-31 17:26" pubdate>2022-05-31</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Vue/">Vue</a> <a href="/tags/Nuxt3/">Nuxt3</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self"><img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="初识Nuxt3"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self">初识Nuxt3</a></h1><p class="index-excerpt"><a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self">🎨前言最近公司规模一点点的起来了，领导反馈可以考虑做一个企业官网了🧓，说起来比较简单都是一些静态的资源，但是毕竟是公司官网肯定要有很多的工作去做seo优化，所以就涉及到了技术栈的选型👩‍🔧。 技术选型 凡科建站 当初打算直接在凡科上选择一个模板，直接就交给运营的同事去弄这些事情了，我们就不参与开发了🧵，但是由于某种原因需要我们自己参与开发🎃。 hexo 了解了领导的意思之后发现都</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2022-05-27 16:28" pubdate>2022-05-27</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Vue/">Vue</a> <a href="/tags/Nuxt3/">Nuxt3</a></div></div></article></div><div class="row mx-auto index-card"><div class="col-12 col-md-4 m-auto index-img"><a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self"><img src="/img/blog_img/index19.jpg" srcset="/img/loading.gif" lazyload alt="vue项目部署404总结🎨"></a></div><article class="col-12 col-md-8 mx-auto index-info"><h1 class="index-header"><a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self">vue项目部署404总结🎨</a></h1><p class="index-excerpt"><a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self">🎨前言不知道你们是不是经常说这样一句话，我本地都是好使的🤐，为什么打包之后就找不到页面呢？为什么找不到静态资源文件呢？为什么找不到public中的文件呢？😧我们会把这三个问题指给运维一口咬定是部署的问题，但其实确实有可能是咱们的问题哦🤦‍♂️ 我们要明白一点，目前现在的开发都是前后端分离的模式🥞，我们每次打包之后的dist的文件夹是部署在nginx上，那就需要我们熟悉一下nginx的相关</a></p><div class="index-btm post-metas"><div class="post-meta mr-3"><i class="iconfont icon-date"></i> <time datetime="2022-05-19 10:57" pubdate>2022-05-19</time></div><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a href="/tags/Vue/">Vue</a> <a href="/tags/Nginx/">Nginx</a></div></div></article></div><nav aria-label="navigation"><span class="pagination" id="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a></span></nav></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div></footer><script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/live2d-widget/autoload.js"></script><script src="/js/boot.js"></script><div id="aplayer" style="right:0"></div><link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script defer src="/js/music.js"></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="drinkwd">
+  <meta name="keywords" content="drinkwd">
+  
+    <meta name="description" content="一个你来了，就走不出去的前端博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="drinkwd的个人博客">
+<meta property="og:url" content="https://drinkwd.github.io/index.html">
+<meta property="og:site_name" content="drinkwd的个人博客">
+<meta property="og:description" content="一个你来了，就走不出去的前端博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="drinkwd">
+<meta property="article:tag" content="drinkwd">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>drinkwd的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>drinkwd的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="我曾踏足山巅，也曾进入低谷，二者都让我受益良多">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self">
+          <img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第五弹">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self">
+          每周一推NPM包-第五弹
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/" target="_self">
+          
+          前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家🎈。 NProgress大家在查看vue-element-admin或者某些相关文档的时候部分网站都会有浏览器加载进度条，接下来我们就用插件来实现它。👇 用法 安装 1npm install --save nprogress 引用 12import NProgress from &amp;#x27;nprogre
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-04-04 08:42" pubdate>
+              2023-04-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/NPM/">NPM</a>
+            
+              <a href="/tags/VUE/">VUE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self">
+          <img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第四弹">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self">
+          每周一推NPM包-第四弹
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/" target="_self">
+          
+          前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-03-10 13:59" pubdate>
+              2023-03-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/NPM/">NPM</a>
+            
+              <a href="/tags/VUE/">VUE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self">
+          <img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第三弹">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self">
+          每周一推NPM包-第三弹
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/" target="_self">
+          
+          前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 circlr我们在做商城或者物品类项目的时候，避免不了要做到物品360度展示，效果类似下图👇。  这款组件支持自定义旋转方向，旋转速度，以及鼠标滚轮，手指触摸控制旋转等等，用法也非常简单🎈。  circlr 通过滚动、鼠标和触摸事件进行动画旋转。
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-02-13 10:56" pubdate>
+              2023-02-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/NPM/">NPM</a>
+            
+              <a href="/tags/VUE/">VUE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self">
+          <img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包-第二弹">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self">
+          每周一推NPM包-第二弹
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/02/06/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%8C%E5%BC%B9/" target="_self">
+          
+          前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 vue-seamless-scroll大家在做可视化大屏的时候应该遇到很多动画效果,这就少不了滚动的表格，如下。  我们当然可以去改变dom的scrollTop去实现，但是有了这款插件之后包裹对应要滚动的dom就可以了，并且还提供了很多的api让的大
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-02-06 14:41" pubdate>
+              2023-02-06
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/NPM/">NPM</a>
+            
+              <a href="/tags/VUE/">VUE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self">
+          <img src="/img/blog_img/index23.png" srcset="/img/loading.gif" lazyload alt="每周一推NPM包">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self">
+          每周一推NPM包
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/01/31/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89/" target="_self">
+          
+          前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家🎈。 timeago.js相信大家都看到过这种时间的展示,或者是朋友圈发了一条动态后，左下角显示 “刚刚”，过一会儿变成了“x分钟前”👇如果我们通过自己实现怕不是比较麻烦,但是有了timeago.js之后就变的简单起来。  timeago.js 是一个 nano 库（小于 2 kb），用于使用 *** t
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-31 10:53" pubdate>
+              2023-01-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/NPM/">NPM</a>
+            
+              <a href="/tags/VUE/">VUE</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">
+          <img src="/img/blog_img/index21.png" srcset="/img/loading.gif" lazyload alt="效率翻倍小技巧">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">
+          效率翻倍小技巧
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/01/29/%E6%95%88%E7%8E%87%E7%BF%BB%E5%80%8D%E5%B0%8F%E6%8A%80%E5%B7%A7/" target="_self">
+          
+          🎨前言工作中最重要的就是效率没有效率怎么摸鱼啊，推荐几款适合开发用到的小工具🥙 markdown 自动生成目录结构当我们在写博客的时候经常想要介绍一下自己项目的目录结构，如下图这种，我当初还以为都是手动生成的😒。 12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.v
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-29 09:09" pubdate>
+              2023-01-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E4%BB%A3%E7%A0%81%E4%BA%BA%E7%94%9F/">代码人生</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+              <a href="/tags/Vscode/">Vscode</a>
+            
+              <a href="/tags/Chrom/">Chrom</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
+          <img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="Nuxt3目录结构(二)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
+          Nuxt3目录结构(二)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/01/09/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_self">
+          
+          前言书接上回  nuxt约定的目录结构如下👇123456789101112131415├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入├── layouts # 布局目录├── composables # 公共函数，支持自动导入├── assets # 静态资源目录 与vue项目的assets相同├── middlew
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-01-09 14:58" pubdate>
+              2023-01-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Nuxt3/">Nuxt3</a>
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self">
+          <img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="Nuxt3目录结构(一)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self">
+          Nuxt3目录结构(一)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/31/Nuxt3%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84(%E4%B8%80)/" target="_self">
+          
+          前言🥠因为Nuxt是约定大于配置的一个框架，所对应的目录结构的名称基本都是规定的，所以有必要解释一下Nuxt对应的目录结构啦🦺  脚手架生成目录结构👇12345678├── app.vue # Nuxt 3 应用程序中的主组件 入口组件├── components # 组件目录，支持自动导入|  └── helloWorld.vue # 组件├── nuxt.config.ts # Nuxt
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-31 17:26" pubdate>
+              2022-05-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Nuxt3/">Nuxt3</a>
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self">
+          <img src="/img/blog_img/index20.png" srcset="/img/loading.gif" lazyload alt="初识Nuxt3">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self">
+          初识Nuxt3
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/27/%E5%88%9D%E8%AF%86Nuxt3/" target="_self">
+          
+          🎨前言最近公司规模一点点的起来了，领导反馈可以考虑做一个企业官网了🧓，说起来比较简单都是一些静态的资源，但是毕竟是公司官网肯定要有很多的工作去做seo优化，所以就涉及到了技术栈的选型👩‍🔧。 技术选型 凡科建站  当初打算直接在凡科上选择一个模板，直接就交给运营的同事去弄这些事情了，我们就不参与开发了🧵，但是由于某种原因需要我们自己参与开发🎃。  hexo  了解了领导的意思之后发现都
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-27 16:28" pubdate>
+              2022-05-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Nuxt3/">Nuxt3</a>
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self">
+          <img src="/img/blog_img/index19.jpg" srcset="/img/loading.gif" lazyload alt="vue项目部署404总结🎨">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self">
+          vue项目部署404总结🎨
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/19/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2404%E6%80%BB%E7%BB%93/" target="_self">
+          
+          🎨前言不知道你们是不是经常说这样一句话，我本地都是好使的🤐，为什么打包之后就找不到页面呢？为什么找不到静态资源文件呢？为什么找不到public中的文件呢？😧我们会把这三个问题指给运维一口咬定是部署的问题，但其实确实有可能是咱们的问题哦🤦‍♂️ 我们要明白一点，目前现在的开发都是前后端分离的模式🥞，我们每次打包之后的dist的文件夹是部署在nginx上，那就需要我们熟悉一下nginx的相关
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-19 10:57" pubdate>
+              2022-05-19
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">Vue</a>
+            
+              <a href="/tags/Nginx/">Nginx</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer" style="right: 0;"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/music.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>

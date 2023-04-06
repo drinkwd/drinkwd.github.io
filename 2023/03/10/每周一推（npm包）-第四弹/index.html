@@ -1,1 +1,706 @@
-<!DOCTYPE html><html lang="zh-CN" data-default-color-scheme="dark"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png"><link rel="icon" href="/img/favicon.png"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="theme-color" content="#2f4154"><meta name="author" content="drinkwd"><meta name="keywords" content="drinkwd"><meta name="description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用"><meta property="og:type" content="article"><meta property="og:title" content="每周一推NPM包-第四弹"><meta property="og:url" content="https://drinkwd.github.io/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/index.html"><meta property="og:site_name" content="drinkwd的个人博客"><meta property="og:description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index23.png"><meta property="article:published_time" content="2023-03-10T05:59:21.904Z"><meta property="article:modified_time" content="2023-03-10T06:04:43.122Z"><meta property="article:author" content="drinkwd"><meta property="article:tag" content="NPM"><meta property="article:tag" content="VUE"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index23.png"><title>每周一推NPM包-第四弹 - drinkwd的个人博客</title><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css"><link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><script id="fluid-configs">var Fluid=window.Fluid||{},CONFIG={hostname:"drinkwd.github.io",root:"/",version:"1.8.14",typing:{enable:!0,typeSpeed:70,cursorChar:"",loop:!1},anchorjs:{enable:!0,element:"h1,h2,h3,h4,h5,h6",placement:"right",visible:"hover",icon:""},progressbar:{enable:!0,height_px:3,color:"#29d",options:{showSpinner:!1,trickleSpeed:100}},copy_btn:!0,image_zoom:{enable:!0,img_url_replace:["",""]},toc:{enable:!0,headingSelector:"h1,h2,h3,h4,h5,h6",collapseDepth:0},lazyload:{enable:!0,loading_img:"/img/loading.gif",onlypost:!1,offset_factor:2},web_analytics:{enable:!1,baidu:null,google:null,gtag:null,tencent:{sid:null,cid:null},woyaola:null,cnzz:null,leancloud:{app_id:null,app_key:null,server_url:null,path:"window.location.pathname",ignore_local:!1}},search_path:"/local-search.xml"}</script><script src="/js/utils.js"></script><script src="/js/color-schema.js"></script><meta name="generator" content="Hexo 5.4.2"></head><body><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/"><strong>drinkwd的博客</strong> </a><button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/"><i class="iconfont icon-home-fill"></i> 首页</a></li><li class="nav-item"><a class="nav-link" href="/archives/"><i class="iconfont icon-archive-fill"></i> 归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/"><i class="iconfont icon-category-fill"></i> 分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/"><i class="iconfont icon-tags-fill"></i> 标签</a></li><li class="nav-item"><a class="nav-link" href="/about/"><i class="iconfont icon-user-fill"></i> 关于</a></li><li class="nav-item"><a class="nav-link" href="/links/"><i class="iconfont icon-link-fill"></i> 友链</a></li><li class="nav-item" id="search-btn"><a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">&nbsp;<i class="iconfont icon-search"></i>&nbsp;</a></li><li class="nav-item" id="color-toggle-btn"><a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a></li></ul></div></div></nav><div class="banner" id="banner" parallax="true" style="background:url(/img/blog_img/banner3.png) no-repeat center center;background-size:cover"><div class="full-bg-img"><div class="mask flex-center" style="background-color:rgba(0,0,0,.3)"><div class="page-header text-center fade-in-up"><span class="h2" id="subtitle" title="每周一推NPM包-第四弹"></span><div class="mt-3"><span class="post-meta mr-2"><i class="iconfont icon-author" aria-hidden="true"></i> drinkwd </span><span class="post-meta"><i class="iconfont icon-date-fill" aria-hidden="true"></i> <time datetime="2023-03-10 13:59" pubdate>2023年3月10日 下午</time></span></div><div class="mt-1"><span class="post-meta mr-2"><i class="iconfont icon-chart"></i> 5k 字 </span><span class="post-meta mr-2"><i class="iconfont icon-clock-fill"></i> 42 分钟 </span><span id="busuanzi_container_page_pv" style="display:none"><i class="iconfont icon-eye" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span> 次</span></div></div></div></div></div></header><main><div class="container-fluid nopadding-x"><div class="row nomargin-x"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-x-md"><div class="container nopadding-x-md" id="board-ctn"><div class="py-5" id="board"><article class="post-content mx-auto"><h1 style="display:none">每周一推NPM包-第四弹</h1><div class="markdown-body"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在<a href="https://drinkwd.github.io/">博客</a>中抢先看哦</strong>🎈。</p><h2 id="v-viewer"><a href="#v-viewer" class="headerlink" title="v-viewer"></a><a target="_blank" rel="noopener" href="http://mirari.cc/v-viewer/">v-viewer</a></h2><p>我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如<code>element-ui</code>下的<code>image</code>组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装<code>element-ui</code>就有些<strong>小题大作</strong>了，🎭还有的同学使用<code>dialog</code>的方式来放大的图片这种只能实现单纯的放大图片🎨，但是无法实现图片翻转，缩小等等功能，于是就需要使用<code>v-viewer</code>来实现🥽。</p><blockquote><p>这款组件支持Vue图片浏览组件<code>v-viewer</code>，支持旋转、缩放、翻转等操作，用法也非常简单🎈。</p></blockquote><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul><li>安装<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> v-viewer<br></code></pre></div></td></tr></table></figure></li><li>用法<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">// main.js</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;viewerjs/dist/viewer.css&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueViewer</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;v-viewer&#x27;</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">VueViewer</span>)<br></code></pre></div></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- template --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 指令方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;images&quot;</span> <span class="hljs-attr">v-viewer</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 组件方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 通过api的方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span>Click to show<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">        ]</span><br><span class="language-javascript">      &#125;;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">      <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.$viewerApi(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">images</span>,</span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure><h4 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h4><blockquote><p>通过这个网站可以设置随机图<a target="_blank" rel="noopener" href="https://picsum.photos/">picsum</a>满足我们写<code>demo</code>的需要🎈。</p></blockquote></li></ul><p>这样就通过三种方式实现了图片的放大具体的效果如下🎉。</p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9271854d05d84bdfb802f6f351ff04aa~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/208491267771490195bf96c4ed38ae93~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h4 id="指令方式-绑定option"><a href="#指令方式-绑定option" class="headerlink" title="指令方式[绑定option]"></a>指令方式[绑定option]</h4><ul><li><code>inline</code><blockquote><ul><li>默认值：<code>false</code></li><li>true：默认放大并且在图片内部展示，false: 需要手动点击方法在图片外部展示</li></ul></blockquote></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7ec841b3f4f43499427219c9862ce41~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>inline->false</center><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb814b9c74c64687980f2b6910476634~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>inline->true</center><ul><li><code>button</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否展示右上角关闭按钮</li></ul></blockquote></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ea4c8ff906640e4b08ca84b6b1be19a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>button->false</center><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9479164628fc43dbab912f0a5b2ecf09~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>button->true</center><ul><li><code>navbar</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否展示下方导航</li></ul></blockquote></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9453195d4be24a4c84dca0ff80f79be3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>navbar->true</center><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7de3a441bf7c46c18a34e858139c4b31~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><center>navbar->false</center><ul><li><code>title</code><blockquote><ul><li>默认值:<code>true</code></li><li>是否在下方显示图片alt信息</li></ul></blockquote></li></ul><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/980a86a7129b4035a737c21e5470345e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><ul><li><code>toolbar</code><blockquote><ul><li>默认：<code>true</code></li><li>是否展示下方工具栏</li></ul></blockquote></li><li><code>movable</code><blockquote><ul><li>默认：<code>true</code></li><li>放大图片是否可移动</li></ul></blockquote></li><li><code>zoomable</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否可放大缩小图片</li></ul></blockquote></li><li><code>tooltip</code><blockquote><ul><li>默认值：<code>true</code></li><li>放大过程中是否展示放大比例</li></ul></blockquote></li><li><code>rotatable</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否有旋转功能</li></ul></blockquote></li><li><code>scalable</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否有放大缩小功能</li></ul></blockquote></li><li><code>fullscreen</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否有全屏功能</li></ul></blockquote></li><li><code>transition</code><blockquote><ul><li>默认值：<code>true</code></li><li>图片放大的过程中是否有放大效果</li></ul></blockquote></li><li><code>keyboard</code><blockquote><ul><li>默认值：<code>true</code></li><li>是否支持键盘上下左右剪头操作</li></ul></blockquote></li></ul><h3 id="拿一个举例"><a href="#拿一个举例" class="headerlink" title="拿一个举例"></a>拿一个举例</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;images&quot;</span> <span class="hljs-attr">v-viewer</span>=<span class="hljs-string">&quot;&#123;inline:false&#125;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;我是img的alt属性&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure><h3 id="组件方式"><a href="#组件方式" class="headerlink" title="组件方式"></a>组件方式</h3><blockquote><p>组件方式中的<code>option</code>与指令方式的<code>option</code>是相同的属性,可以在<code>option</code>中动态配置。</p></blockquote><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:options</span>=<span class="hljs-string">&quot;options&quot;</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">        ],</span><br><span class="language-javascript">        <span class="hljs-attr">options</span>:&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">      &#125;;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure><h4 id="api方式（该方式不太常用）"><a href="#api方式（该方式不太常用）" class="headerlink" title="api方式（该方式不太常用）"></a>api方式（该方式不太常用）</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;previewURL&quot;</span>&gt;</span>URL Array<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;previewImgObject&quot;</span>&gt;</span>Img-Object Array<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">import</span> &#123; api <span class="hljs-keyword">as</span> viewerApi &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;v-viewer&quot;</span></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">sourceImageURLs</span>: [</span><br><span class="language-javascript">        <span class="hljs-string">&#x27;https://picsum.photos/200/200?random=1&#x27;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&#x27;https://picsum.photos/200/200?random=2&#x27;</span>,</span><br><span class="language-javascript">      ],</span><br><span class="language-javascript">      <span class="hljs-attr">sourceImageObjects</span>: [</span><br><span class="language-javascript">        &#123;</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;src&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/200/200?random=3&#x27;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;data-source&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/800/800?random=3&#x27;</span></span><br><span class="language-javascript">        &#125;,</span><br><span class="language-javascript">        &#123;</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;src&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/200/200?random=4&#x27;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;data-source&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/800/800?random=4&#x27;</span></span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">      ]</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">      previewURL () &#123;</span><br><span class="language-javascript">          <span class="hljs-comment">// 如果使用`app.use`进行全局安装, 你就可以像这样直接调用`this.$viewerApi`</span></span><br><span class="language-javascript">        <span class="hljs-keyword">const</span> $viewer = <span class="hljs-variable language_">this</span>.$viewerApi(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">sourceImageURLs</span></span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">      previewImgObject () &#123;</span><br><span class="language-javascript">          <span class="hljs-comment">// 或者你可以单独引入api然后执行它</span></span><br><span class="language-javascript">        <span class="hljs-keyword">const</span> $viewer = <span class="hljs-title function_">viewerApi</span>(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">options</span>: &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">toolbar</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;data-source&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">initialViewIndex</span>: <span class="hljs-number">1</span></span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">sourceImageObjects</span></span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure><h4 id="通过外部按钮操作图片"><a href="#通过外部按钮操作图片" class="headerlink" title="通过外部按钮操作图片"></a>通过外部按钮操作图片</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iten&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:options</span>=<span class="hljs-string">&quot;options&quot;</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>  @<span class="hljs-attr">inited</span>=<span class="hljs-string">&quot;inited&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;Rotate&quot;</span>&gt;</span><br>      旋转<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">      ],</span><br><span class="language-javascript">      <span class="hljs-attr">options</span>: &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-title class_">Rotate</span>() &#123;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$viewer</span>.<span class="hljs-title function_">rotate</span>(<span class="hljs-number">90</span>)</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">inited</span>(<span class="hljs-params">viewer</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$viewer</span> = viewer</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure><blockquote><p>更多案例可以查看<a target="_blank" rel="noopener" href="http://mirari.cc/v-viewer/">v-viewer</a>点击<code>source</code>查看对应源码🤗</p></blockquote><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/502f5578656742df84ca23fce683de9f~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><blockquote><ul><li>如果使用vue3可以使用该组件<a target="_blank" rel="noopener" href="https://github.com/mirari/v-viewer/tree/v3">v-viewer-vue3</a></li></ul></blockquote><h2 id="往期NPM包"><a href="#往期NPM包" class="headerlink" title="往期NPM包"></a>往期NPM包</h2><h5 id="timeago-js"><a href="#timeago-js" class="headerlink" title="timeago.js"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7194637751516414011">timeago.js</a></h5><h5 id="vue-seamless-scroll"><a href="#vue-seamless-scroll" class="headerlink" title="vue-seamless-scroll"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7196907025099653176">vue-seamless-scroll</a></h5><h5 id="circlr"><a href="#circlr" class="headerlink" title="circlr"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7199455220802486330">circlr</a></h5><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>v-viewer</code>的功能是比较全的一款插件主要是根据图片放大的拓展，好用！🎈。</p></div><hr><div><div class="post-metas mb-3"><div class="post-meta mr-3"><i class="iconfont icon-category"></i> <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></div><div class="post-meta"><i class="iconfont icon-tags"></i> <a class="hover-with-bg" href="/tags/NPM/">NPM</a> <a class="hover-with-bg" href="/tags/VUE/">VUE</a></div></div><p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！谢谢</p><div class="post-prevnext"><article class="post-prev col-6"><a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/"><i class="iconfont icon-arrowleft"></i> <span class="hidden-mobile">每周一推NPM包-第五弹</span> <span class="visible-mobile">上一篇</span></a></article><article class="post-next col-6"><a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/"><span class="hidden-mobile">每周一推NPM包-第三弹</span> <span class="visible-mobile">下一篇</span> <i class="iconfont icon-arrowright"></i></a></article></div></div><article class="comments" id="comments" lazyload><script type="text/javascript">Fluid.utils.loadComments("#comments",(function(){var t=document.documentElement.getAttribute("data-user-color-scheme");t="dark"===t?"github-dark":"github-light",window.UtterancesThemeLight="github-light",window.UtterancesThemeDark="github-dark";var e=document.createElement("script");e.setAttribute("src","https://utteranc.es/client.js"),e.setAttribute("repo","drinkwd/drinkwd.github.io"),e.setAttribute("issue-term","title"),e.setAttribute("label","utterances"),e.setAttribute("theme",t),e.setAttribute("crossorigin","anonymous"),document.getElementById("comments").appendChild(e)}))</script><noscript>Please enable JavaScript to view the comments</noscript></article></article></div></div></div><div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn"><div id="toc"><p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p><div class="toc-body" id="toc-body"></div></div></div></div></div><a id="scroll-top-button" aria-label="TOP" href="#" role="button"><i class="iconfont icon-arrowup" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div></main><footer class="text-center mt-5 py-3"><div class="footer-content"><a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a></div><div class="statistics"><span id="busuanzi_container_site_pv" style="display:none">总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span><span id="busuanzi_container_site_uv" style="display:none">总访客数 <span id="busuanzi_value_site_uv"></span> 人</span></div></footer><script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script><link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"><script>NProgress.configure({showSpinner:!1,trickleSpeed:100}),NProgress.start(),window.addEventListener("load",(function(){NProgress.done()}))</script><script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js"></script><script src="/js/events.js"></script><script src="/js/plugins.js"></script><script src="/js/local-search.js"></script><script src="/js/img-lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js"></script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js"></script><script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script><script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script><script>!function(t,i){(0,Fluid.plugins.typing)(i.getElementById("subtitle").title)}(window,document)</script><script src="/live2d-widget/autoload.js"></script><script src="/js/boot.js"></script><div id="aplayer" style="right:0"></div><link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script><script defer src="/js/music.js"></script></body></html>
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=dark>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="drinkwd">
+  <meta name="keywords" content="drinkwd">
+  
+    <meta name="description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每周一推NPM包-第四弹">
+<meta property="og:url" content="https://drinkwd.github.io/2023/03/10/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E5%9B%9B%E5%BC%B9/index.html">
+<meta property="og:site_name" content="drinkwd的个人博客">
+<meta property="og:description" content="前言为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在博客中抢先看哦🎈。 v-viewer我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如element-ui下的image组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装element-ui就有些小题大作了，🎭还有的同学使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://drinkwd.github.io/img/blog_img/index23.png">
+<meta property="article:published_time" content="2023-03-10T05:59:21.904Z">
+<meta property="article:modified_time" content="2023-03-10T06:04:43.122Z">
+<meta property="article:author" content="drinkwd">
+<meta property="article:tag" content="NPM">
+<meta property="article:tag" content="VUE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://drinkwd.github.io/img/blog_img/index23.png">
+  
+  
+  <title>每周一推NPM包-第四弹 - drinkwd的个人博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/hint.css/2.7.0/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.4.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"drinkwd.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>drinkwd的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/blog_img/banner3.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="每周一推NPM包-第四弹">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      drinkwd
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2023-03-10 13:59" pubdate>
+        2023年3月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      42 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">每周一推NPM包-第四弹</h1>
+            
+            <div class="markdown-body">
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>为了不让自己的空余时间都浪费掉，打算做一个每周一推的专栏，盘点一些好的插件，分享给大家，每次分享前会先发到自己的博客，可以在<a href="https://drinkwd.github.io/">博客</a>中抢先看哦</strong>🎈。</p>
+<h2 id="v-viewer"><a href="#v-viewer" class="headerlink" title="v-viewer"></a><a target="_blank" rel="noopener" href="http://mirari.cc/v-viewer/">v-viewer</a></h2><p>我们在做后台项目的时候会涉及到图片的放大🖼，已经有很多成熟的组件提供了这些功能比如<code>element-ui</code>下的<code>image</code>组件,但是如果我们需要单独使用图片放大的功能🎡，还需要安装<code>element-ui</code>就有些<strong>小题大作</strong>了，🎭还有的同学使用<code>dialog</code>的方式来放大的图片这种只能实现单纯的放大图片🎨，但是无法实现图片翻转，缩小等等功能，于是就需要使用<code>v-viewer</code>来实现🥽。</p>
+<blockquote>
+<p>这款组件支持Vue图片浏览组件<code>v-viewer</code>，支持旋转、缩放、翻转等操作，用法也非常简单🎈。</p>
+</blockquote>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
+<li>安装<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> v-viewer<br></code></pre></div></td></tr></table></figure></li>
+<li>用法<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-comment">// main.js</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;viewerjs/dist/viewer.css&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueViewer</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;v-viewer&#x27;</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">VueViewer</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- template --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 指令方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;images&quot;</span> <span class="hljs-attr">v-viewer</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 组件方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 通过api的方式放大图片 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;show&quot;</span>&gt;</span>Click to show<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">        ]</span><br><span class="language-javascript">      &#125;;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">      <span class="hljs-title function_">show</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.$viewerApi(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">images</span>,</span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h4 id="小tips"><a href="#小tips" class="headerlink" title="小tips"></a>小tips</h4><blockquote>
+<p>通过这个网站可以设置随机图<a target="_blank" rel="noopener" href="https://picsum.photos/">picsum</a>满足我们写<code>demo</code>的需要🎈。</p>
+</blockquote>
+</li>
+</ul>
+<p>这样就通过三种方式实现了图片的放大具体的效果如下🎉。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9271854d05d84bdfb802f6f351ff04aa~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/208491267771490195bf96c4ed38ae93~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h4 id="指令方式-绑定option"><a href="#指令方式-绑定option" class="headerlink" title="指令方式[绑定option]"></a>指令方式[绑定option]</h4><ul>
+<li><code>inline</code><blockquote>
+<ul>
+<li>默认值：<code>false</code></li>
+<li> true：默认放大并且在图片内部展示，false: 需要手动点击方法在图片外部展示</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7ec841b3f4f43499427219c9862ce41~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>inline->false</center>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb814b9c74c64687980f2b6910476634~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>inline->true</center>
+
+<ul>
+<li><code>button</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否展示右上角关闭按钮</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ea4c8ff906640e4b08ca84b6b1be19a~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>button->false</center>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9479164628fc43dbab912f0a5b2ecf09~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>button->true</center>
+
+<ul>
+<li><code>navbar</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否展示下方导航</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9453195d4be24a4c84dca0ff80f79be3~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>navbar->true</center>
+
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7de3a441bf7c46c18a34e858139c4b31~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<center>navbar->false</center>
+
+<ul>
+<li><code>title</code><blockquote>
+<ul>
+<li> 默认值:<code>true</code></li>
+<li>是否在下方显示图片alt信息</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/980a86a7129b4035a737c21e5470345e~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><code>toolbar</code><blockquote>
+<ul>
+<li>默认：<code>true</code></li>
+<li>是否展示下方工具栏</li>
+</ul>
+</blockquote>
+</li>
+<li><code>movable</code><blockquote>
+<ul>
+<li>默认：<code>true</code></li>
+<li>放大图片是否可移动</li>
+</ul>
+</blockquote>
+</li>
+<li><code>zoomable</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否可放大缩小图片</li>
+</ul>
+</blockquote>
+</li>
+<li><code>tooltip</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>放大过程中是否展示放大比例</li>
+</ul>
+</blockquote>
+</li>
+<li><code>rotatable</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否有旋转功能</li>
+</ul>
+</blockquote>
+</li>
+<li><code>scalable</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否有放大缩小功能</li>
+</ul>
+</blockquote>
+</li>
+<li><code>fullscreen</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否有全屏功能</li>
+</ul>
+</blockquote>
+</li>
+<li><code>transition</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>图片放大的过程中是否有放大效果 </li>
+</ul>
+</blockquote>
+</li>
+<li><code>keyboard</code><blockquote>
+<ul>
+<li>默认值：<code>true</code></li>
+<li>是否支持键盘上下左右剪头操作</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="拿一个举例"><a href="#拿一个举例" class="headerlink" title="拿一个举例"></a>拿一个举例</h3><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;images&quot;</span> <span class="hljs-attr">v-viewer</span>=<span class="hljs-string">&quot;&#123;inline:false&#125;&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;我是img的alt属性&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="组件方式"><a href="#组件方式" class="headerlink" title="组件方式"></a>组件方式</h3><blockquote>
+<p>组件方式中的<code>option</code>与指令方式的<code>option</code>是相同的属性,可以在<code>option</code>中动态配置。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:options</span>=<span class="hljs-string">&quot;options&quot;</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">        ],</span><br><span class="language-javascript">        <span class="hljs-attr">options</span>:&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">      &#125;;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="api方式（该方式不太常用）"><a href="#api方式（该方式不太常用）" class="headerlink" title="api方式（该方式不太常用）"></a>api方式（该方式不太常用）</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;previewURL&quot;</span>&gt;</span>URL Array<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;button&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;previewImgObject&quot;</span>&gt;</span>Img-Object Array<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">import</span> &#123; api <span class="hljs-keyword">as</span> viewerApi &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;v-viewer&quot;</span></span><br><span class="language-javascript">  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">sourceImageURLs</span>: [</span><br><span class="language-javascript">        <span class="hljs-string">&#x27;https://picsum.photos/200/200?random=1&#x27;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&#x27;https://picsum.photos/200/200?random=2&#x27;</span>,</span><br><span class="language-javascript">      ],</span><br><span class="language-javascript">      <span class="hljs-attr">sourceImageObjects</span>: [</span><br><span class="language-javascript">        &#123;</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;src&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/200/200?random=3&#x27;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;data-source&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/800/800?random=3&#x27;</span></span><br><span class="language-javascript">        &#125;,</span><br><span class="language-javascript">        &#123;</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;src&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/200/200?random=4&#x27;</span>,</span><br><span class="language-javascript">          <span class="hljs-string">&#x27;data-source&#x27;</span>:<span class="hljs-string">&#x27;https://picsum.photos/800/800?random=4&#x27;</span></span><br><span class="language-javascript">        &#125;</span><br><span class="language-javascript">      ]</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">      previewURL () &#123;</span><br><span class="language-javascript">          <span class="hljs-comment">// 如果使用`app.use`进行全局安装, 你就可以像这样直接调用`this.$viewerApi`</span></span><br><span class="language-javascript">        <span class="hljs-keyword">const</span> $viewer = <span class="hljs-variable language_">this</span>.$viewerApi(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">sourceImageURLs</span></span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;,</span><br><span class="language-javascript">      previewImgObject () &#123;</span><br><span class="language-javascript">          <span class="hljs-comment">// 或者你可以单独引入api然后执行它</span></span><br><span class="language-javascript">        <span class="hljs-keyword">const</span> $viewer = <span class="hljs-title function_">viewerApi</span>(&#123;</span><br><span class="language-javascript">          <span class="hljs-attr">options</span>: &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">toolbar</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;data-source&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">initialViewIndex</span>: <span class="hljs-number">1</span></span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          <span class="hljs-attr">images</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">sourceImageObjects</span></span><br><span class="language-javascript">        &#125;)</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h4 id="通过外部按钮操作图片"><a href="#通过外部按钮操作图片" class="headerlink" title="通过外部按钮操作图片"></a>通过外部按钮操作图片</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iten&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">viewer</span> <span class="hljs-attr">:options</span>=<span class="hljs-string">&quot;options&quot;</span> <span class="hljs-attr">:images</span>=<span class="hljs-string">&quot;images&quot;</span>  @<span class="hljs-attr">inited</span>=<span class="hljs-string">&quot;inited&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;src in images&quot;</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;src&quot;</span> <span class="hljs-attr">:src</span>=<span class="hljs-string">&quot;src&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">viewer</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;Rotate&quot;</span>&gt;</span><br>      旋转<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">images</span>: [</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/200/200&quot;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/300/200&quot;</span>,</span><br><span class="language-javascript">        <span class="hljs-string">&quot;https://picsum.photos/250/200&quot;</span></span><br><span class="language-javascript">      ],</span><br><span class="language-javascript">      <span class="hljs-attr">options</span>: &#123;</span><br><span class="language-javascript">        <span class="hljs-attr">inline</span>: <span class="hljs-literal">true</span></span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-title class_">Rotate</span>() &#123;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$viewer</span>.<span class="hljs-title function_">rotate</span>(<span class="hljs-number">90</span>)</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">inited</span>(<span class="hljs-params">viewer</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">$viewer</span> = viewer</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<blockquote>
+<p>更多案例可以查看<a target="_blank" rel="noopener" href="http://mirari.cc/v-viewer/">v-viewer</a>点击<code>source</code>查看对应源码🤗</p>
+</blockquote>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/502f5578656742df84ca23fce683de9f~tplv-k3u1fbpfcp-zoom-1.image" srcset="/img/loading.gif" lazyload></p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><blockquote>
+<ul>
+<li>如果使用vue3可以使用该组件<a target="_blank" rel="noopener" href="https://github.com/mirari/v-viewer/tree/v3">v-viewer-vue3</a></li>
+</ul>
+</blockquote>
+<h2 id="往期NPM包"><a href="#往期NPM包" class="headerlink" title="往期NPM包"></a>往期NPM包</h2><h5 id="timeago-js"><a href="#timeago-js" class="headerlink" title="timeago.js"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7194637751516414011">timeago.js</a></h5><h5 id="vue-seamless-scroll"><a href="#vue-seamless-scroll" class="headerlink" title="vue-seamless-scroll"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7196907025099653176">vue-seamless-scroll</a></h5><h5 id="circlr"><a href="#circlr" class="headerlink" title="circlr"></a><a target="_blank" rel="noopener" href="https://juejin.cn/post/7199455220802486330">circlr</a></h5><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>v-viewer</code>的功能是比较全的一款插件主要是根据图片放大的拓展，好用！🎈。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/NPM/">NPM</a>
+                    
+                      <a class="hover-with-bg" href="/tags/VUE/">VUE</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a>  ，转载请注明出处！谢谢
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/04/04/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%BA%94%E5%BC%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">每周一推NPM包-第五弹</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/13/%E6%AF%8F%E5%91%A8%E4%B8%80%E6%8E%A8%EF%BC%88npm%E5%8C%85%EF%BC%89-%E7%AC%AC%E4%B8%89%E5%BC%B9/">
+                        <span class="hidden-mobile">每周一推NPM包-第三弹</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'drinkwd/drinkwd.github.io');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://github.com/drinkwd" target="_blank" rel="nofollow noopener"><span>gitHub</span></a> <i class="iconfont icon-love"></i> <a href="https://juejin.cn/user/3632442148403879" target="_blank" rel="nofollow noopener"><span>掘金</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/bootstrap/4.5.3/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.staticfile.org/tocbot/4.12.0/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/anchor-js/4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/live2d-widget/autoload.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<!-- hexo injector body_end start -->
+  <div id="aplayer" style="right: 0;"></div>
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.css" />
+  <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+  <script defer src="/js/music.js"></script>
+<!-- hexo injector body_end end --></body>
+</html>
