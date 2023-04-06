@@ -31,7 +31,7 @@ git pull origin master
 ```
 
 ### .gitignore 无效的解决方法
-场景再现: `.gitignore`第一次没有写全。比如老李新建了一个项目跟往常一样正常的提交，随着项目体积的不断增加，老李发现有一个文件的目录上传的`git`根本是没有必要的，还特别大。于是老李就在`.gitignore`中加入了响应的目录规则，但是并没有生效！！！
+场景再现: `.gitignore`第一次没有写全。比如老李新建了一个项目跟往常一样正常的提交，随着项目体积的不断增加，老李发现有一个文件的目录上传的`git`根本是没有必要的，还特别大。于是老李就在`.gitignore`中加入了相应的目录规则，但是并没有生效！！！
 
 产生原因：`.gitignore`只能忽略那些原来没有被`track`的文件，如果某些文件已经被纳入了版本管理中，则修改`.gitignore`是无效的
 
@@ -51,12 +51,13 @@ git commit -m 'niubi'
 - `git push` 如果当前分支与多个主机存在追踪关系，那么这个时候也可以使用-u选项会指定一个默认主机，如果不加参数就会推送到默认主机(场景：同一个项目记关联了`github`也关联了`gitee`)。
 
 ### 一个项目关联多个远程Git仓库
+![创建仓库.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ebb9c6f9b7c94261bed16a64a7fac54b~tplv-k3u1fbpfcp-watermark.image?)
 - 方法一: 使用 `git remote add` 命令
 ``` Bash
 git remote add github https://github.com/xxx/xxx.git #关联github
 git remote add gitee https://gitee.com/xxx/xxx.git # 关联gitee
 ```
-缺点: 每次`push`的时候都要`push`两次才能推送到响应的远程。
+缺点: 每次`push`的时候都要`push`两次才能推送到相应的远程。
 ``` Bash
 git push github master
 git push gitee master
@@ -158,7 +159,7 @@ npm i -g gitmoji-cli
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2ea4df9ee5154effa9948a4477e4d1a8~tplv-k3u1fbpfcp-zoom-1.image)
 
-你是不是也一脸懵逼，这是在提交什么。一般来说`commit`应该一眼就能知道提交的是什么。也为了和一起开发的同事清楚的知道，你这次提交的内容🙄。网上大部分说的规范就是[`Angular `规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)英文好的同学可以去看看，也可以直接参考[阮一峰大佬的博客](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)了解了大概规范之后我们就找响应的工具帮我们弄成规范的样子就好啦😁。
+你是不是也一脸懵逼，这是在提交什么。一般来说`commit`应该一眼就能知道提交的是什么。也为了和一起开发的同事清楚的知道，你这次提交的内容🙄。网上大部分说的规范就是[`Angular `规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#)英文好的同学可以去看看，也可以直接参考[阮一峰大佬的博客](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)了解了大概规范之后我们就找相应的工具帮我们弄成规范的样子就好啦😁。
 
 `Commitizen`（合格`Commit message` 的工具）
 
@@ -170,7 +171,7 @@ npm i -g gitmoji-cli
 ``` Bash
 commitizen init cz-conventional-changelog --save --save-exact
 ```
-> 注意：因为commitizen工具是基于Node.js的,所以要保证你的项目下要有package.
+> ~~注意：因为commitizen工具是基于Node.js的,所以要保证你的项目下要有package.json~~ 
 
 之后再提交代码的时候使用`git cz` 代替`git commit`命令就会出现提交类型的选择，使你提交的代码更规范。🤗
 
