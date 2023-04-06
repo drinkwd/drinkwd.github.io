@@ -22,6 +22,10 @@ banner_img: /img/blog_img/banner4.jpg
  git stash
  git pull origin master
  git stash pop
+ ...解决冲突
+ git add .
+ git commit -m fix:解决冲突
+ git push origin master
 ```
 
 解决方案二: 覆盖本地新修改的代码，只保留服务端的代码。直接退回到上一个版本然后把`git`服务器上的代码`pull`到本地
@@ -29,7 +33,16 @@ banner_img: /img/blog_img/banner4.jpg
 git reset --hard
 git pull origin master
 ```
-
+解决方案三: 提交代码到暂存区，拉取代码在本地解决冲突再重新提交
+``` Bash
+git add .
+git commit -m fix:更新
+git pull origin master
+...解决冲突
+git add .
+git commit -m fix:解决冲突
+git push origin master
+```
 ### .gitignore 无效的解决方法
 场景再现: `.gitignore`第一次没有写全。比如老李新建了一个项目跟往常一样正常的提交，随着项目体积的不断增加，老李发现有一个文件的目录上传的`git`根本是没有必要的，还特别大。于是老李就在`.gitignore`中加入了相应的目录规则，但是并没有生效！！！
 
