@@ -227,7 +227,7 @@ commitizen init cz-customizable --save-dev --save-exact --force
 [conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) 就是生成 `Change log` 的工具，运行下面的命令即可。
 
 ```
-$ npm install -g conventional-changelog
+$ npm install -g conventional-changelog-cli
 $ cd my-project
 $ conventional-changelog -p angular -i CHANGELOG.md -w -r 0
 ```
