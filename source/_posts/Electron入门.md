@@ -544,7 +544,12 @@ vue add electron-builder
   }
 ```
 #### Electron打包
-第一次打包会很慢很慢，也可能会超时，解决方案可以参考[这篇](https://www.cnblogs.com/qirui/p/8328015.html)
+第一次打包会很慢很慢，也可能会超时，解决方案可以参考[这篇](https://www.cnblogs.com/qirui/p/8328015.html)或者[文章2](https://www.jianshu.com/p/35abb68d0331)
+设electron淘宝镜像在终端中敲入
+ ```
+ npm set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+ ```
+ 打开C盘，在你当前用户下搜索 .npmrc 文件，用记事本打开，看看是否设置成功。
 ```
 npm run electron:build
 ```
