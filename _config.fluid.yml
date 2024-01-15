@@ -186,7 +186,7 @@ custom_js: '/live2d-widget/autoload.js'
 # https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css 原有cdn
 
 custom_css: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css'
-
+custom_head: '<meta name="referrer" content="no-referrer"/>'
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
 custom_html: ''
