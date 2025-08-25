@@ -109,6 +109,9 @@ deploy:
 - type: git
   repo: https://gitee.com/drinkwd/drinkwd.git
   branch: master
+- type: git
+  repo: git@60.205.112.230:/home/repo/hexo.git
+  branch: master
 all_minifier: false
 # sitemap
 sitemap:

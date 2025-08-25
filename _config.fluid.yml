@@ -376,11 +376,11 @@ footer:
     # ICP证号
     icp_text: 黑ICP备2025043159号
     # 公安备案号，不填则只显示ICP
-    police_text: 
+    police_text: 黑公网安备23060002000285号
     # 公安备案的编号，用于URL跳转查询
-    police_code: 
+    police_code: 23060002000285
     # 公安备案的图片. 为空时不显示备案图片
-    police_icon: 
+    police_icon: /img/police_beian.png
 
 
 #---------------------------
